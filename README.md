@@ -1,39 +1,53 @@
-Bem-vindo ao repositório do Projeto Sistema de Monitorias da matéria de Projeto Integrador! Este projeto foi desenvolvido pelos seguintes membros da equipe:
+# Genius - Sistema de Monitorias da UTFPR
 
-Desenvolvedores Front-end:
+Bem-vindo ao repositório do **Genius**, um sistema de monitorias para a matéria de Projeto Integrador da Universidade Tecnológica Federal do Paraná (UTFPR)! Este projeto foi desenvolvido por nossa equipe de desenvolvedores front-end:
 
-Rafaela Tieri
-Walancy Ferreira
+- **Rafaela Tieri**
+- **Walancy Ferreira**
 
-Este sistema de monitorias foi criado utilizando as seguintes tecnologias:
+## Sobre o Projeto
 
-React: Uma biblioteca JavaScript para criar interfaces de usuário interativas.
-Yup: Uma biblioteca de validação de objetos JavaScript.
-Formik: Uma biblioteca para gerenciar formulários em React.
-Axios: Uma biblioteca para fazer requisições HTTP.
-Material UI: Um framework de design de interface de usuário para React.
-Javascript: A linguagem de programação principal utilizada no projeto.
-Como Executar o Projeto
-Siga as instruções abaixo para executar o projeto em sua máquina local:
+O **Genius** é uma plataforma web desenvolvida com o intuito de auxiliar os discentes da UTFPR com mais informações sobre as monitorias e palunos fornecidos dentro da instituição, além de oferecer monitorias pagas sobre determinadas disciplinas e até idiomas.
 
-Clone o repositório:
+Foram utilizadas tecnologias modernas para facilitar e melhorar a usabilidade dos usuários, sendo elas:
 
-bash
-Copy code
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
-Navegue para o diretório do projeto:
+- **React:** Uma biblioteca JavaScript para criar interfaces de usuário interativas.
+- **Yup:** Uma biblioteca de validação de objetos JavaScript.
+- **Formik:** Uma biblioteca para gerenciar formulários em React.
+- **Axios:** Uma biblioteca para fazer requisições HTTP.
+- **Material UI:** Um framework de design de interface de usuário para React.
+- **Javascript:** A linguagem de programação principal utilizada no projeto.
 
-bash
-Copy code
-cd nome-do-repositorio
-Instale as dependências:
+## Instruções para execução
 
-bash
-Copy code
+Siga as instruções abaixo para executar o frontend em sua máquina local:
+
+1. **Clone o repositório:**
+
+```bash
+git clone https://github.com/GeniusUTFPR/front_end.git
+```
+
+2. **Navegue para o diretório do projeto:**
+
+```bash
+cd front_end
+```
+
+3. **Instale as dependências:**
+
+```bash
 npm install
-Inicie o servidor de desenvolvimento:
+```
 
-bash
-Copy code
+4. **Inicie o servidor de desenvolvimento:**
+
+```bash
 npm start
-Abra o navegador e acesse o projeto em http://localhost:3000.
+```
+
+1. **O frontend estará disponível em [http://localhost:3000](http://localhost:3000).**
+
+## Observações
+
+Se você tiver alguma dúvida ou precisar de assistência, não hesite em entrar em contato com nossa equipe de desenvolvedores.

@@ -1,0 +1,148 @@
+.inicial-container {
+  font-family: poppins;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  margin-top: 200px;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.esquerda-container {
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.vetor {
+  width: 100%;
+}
+
+.imagem-esquerda {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+}
+
+.frase {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 5vw 9vw 0vw 9vw; /* cima direita baixo esquerda */
+  text-align: justify;
+}
+
+.meu-mentor {
+  color: #00ff7e;
+  font-weight: 600;
+}
+
+.direita {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 35%;
+  margin-right: 5%;
+  justify-content: center;
+}
+
+.direita-container {
+  background-color: #111111;
+  margin: 10px;
+  border-radius: 30px;
+  padding: 50px 5vw;
+}
+
+.objetivos {
+  color: #00ff7e;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.circles-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.circles-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin: 16px 0;
+}
+
+.circles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5vw;
+  padding: 20px;
+}
+
+.circle {
+  display: flex;
+  background-color: #00ff7e;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 32px;
+  color: #000000;
+  font-weight: 900;
+  padding: 2px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1.5vw;
+}
+
+.frases {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: 500;
+  gap: 50px;
+  width: 70%;
+}
+
+@media screen and (max-width: 740px) {
+  .inicial-container {
+    flex-direction: column;
+  }
+
+  .esquerda-container {
+    width: 80%;
+  }
+
+  .direita {
+    width: 80%;
+    margin: 20px 0 100px 0;
+  }
+
+  .direita-container {
+    padding: 5vw 5vw;
+  }
+
+  .circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .frases {
+    width: 80%;
+  }
+
+  .footer {
+    display: none;
+  }
+}

@@ -1,24 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { PAGINA_INICIAL } from "./routes/routes";
+
+import { PaginaInicial } from "./pages/PaginaInicial/PaginaInicial";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path={PAGINA_INICIAL} element={<PaginaInicial />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

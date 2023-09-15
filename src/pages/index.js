@@ -1,1 +1,1 @@
-export { PaginaInicial } from "./PaginaInicial/PaginaInicial";
+export { PaginaInicial } from "./PaginaInicial";

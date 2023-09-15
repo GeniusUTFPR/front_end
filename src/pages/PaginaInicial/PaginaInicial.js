@@ -1,4 +1,4 @@
-import "./PaginaInicial.css";
+import './PaginaInicial.css';
 
 export const PaginaInicial = () => {
   return (

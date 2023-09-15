@@ -1,9 +1,9 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { PAGINA_INICIAL } from "./routes/routes";
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { PAGINA_INICIAL } from './routes/routes';
 
-import { PaginaInicial } from "./pages/PaginaInicial/PaginaInicial";
+import { PaginaInicial } from './pages/PaginaInicial/PaginaInicial';
 
-function App() {
+export const App = () => {
   return (
     <BrowserRouter>
       <Routes>
@@ -11,6 +11,4 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
-}
-
-export default App;
+};

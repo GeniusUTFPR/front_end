@@ -38,7 +38,7 @@
 }
 
 .meu-mentor {
-  color: #00ff7e;
+  color: #fecc00;
   font-weight: 600;
 }
 
@@ -60,7 +60,7 @@
 }
 
 .objetivos {
-  color: #00ff7e;
+  color: #fecc00;
   font-weight: 600;
   font-size: 20px;
   margin-bottom: 8px;
@@ -90,7 +90,7 @@
 
 .circle {
   display: flex;
-  background-color: #00ff7e;
+  background-color: #fecc00;
   width: 60px;
   height: 60px;
   border-radius: 50%;

@@ -1,0 +1,115 @@
+* {
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background-color: #0c0c0c;
+}
+
+h1,
+button {
+  all: unset;
+}
+
+.curso-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.curso-container .curso-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #ffffff;
+
+  background-color: #121212;
+  border-radius: 20px;
+  padding: 50px;
+  width: 450px;
+}
+
+.curso-container .logo {
+  margin: 50px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: px;
+  height: 10vh;
+  right: 100px;
+}
+
+.curso-container .curso-wrapper h1 {
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.curso-container .conta {
+  color: #fecc00;
+}
+
+.curso-container form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.curso-container input {
+  width: 500%;
+  height: 1px;
+  padding: 25px;
+  margin-bottom: 15px;
+  margin: 10px 5px;
+
+  color: #ffffff;
+  border-radius: 100px;
+  border: 3px solid #fecc00;
+  background-color: #121212;
+}
+
+.curso-container input:focus {
+  outline: 0.5px solid #fecc00;
+}
+
+.curso-container input::placeholder {
+  font-size: 14px;
+  color: #424242;
+  font-weight: 500;
+}
+
+.curso-container .botaoCriar {
+  margin-top: 30px;
+  width: 40%;
+  height: 20px;
+  padding: 20px;
+
+  font-size: 19px;
+  font-stretch: bold;
+
+  border-radius: 25px;
+  background-color: #fecc00;
+
+  line-height: 10%;
+  font-weight: bold;
+
+  color: #121212;
+
+  cursor: pointer;
+}
+
+.error-input {
+  border-color: red;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+  color: #626262;
+}

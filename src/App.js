@@ -3,10 +3,10 @@ import { CADASTRAR_CURSO, PAGINA_INICIAL } from "./routes/routes";
 import { CADASTRO } from "./routes/routes";
 import { AVALIACAO } from "./routes/routes";
 
-import { PaginaInicial } from "./pages/PaginaInicial/PaginaInicial";
-import { Cadastro } from "./pages/Cadastro/Cadastro";
-import { CadastrarCurso } from "./pages/CadastrarCurso/index";
-import { Avaliacao } from "./pages/Avaliacao/index";
+import { PaginaInicial } from "./pages/PaginaInicial";
+import { Cadastro } from "./pages/Cadastro";
+import { CadastrarCurso } from "./pages/CadastrarCurso";
+import { Avaliacao } from "./pages/Avaliacao";
 
 export const App = () => {
   return (

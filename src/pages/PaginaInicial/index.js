@@ -1,12 +1,20 @@
-import './PaginaInicial.css';
+import './index.css';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header/index';
+
+import LogoHeader from '../../assets/logo.svg';
 
 export const PaginaInicial = () => {
   return (
     <div>
-      <div className="header"></div>
+      <div className="header">
+        <Header />
+      </div>
       <div className="inicial-container">
         <div className="esquerda-container">
-          <div className="imagem-esquerda"></div>
+          <div className="imagem-esquerda">
+            <img src={LogoHeader} alt="Logo" className="logoPaginaInicial" />
+          </div>
           <div className="frase">
             <p>
               Bem-vindo(a) ao <span class="meu-mentor">Meu Mentor</span>, a
@@ -47,7 +55,9 @@ export const PaginaInicial = () => {
           </div>
         </div>
       </div>
-      <div className="footer"></div>
+      <div className="footer">
+        <Footer />
+      </div>
     </div>
   );
 };

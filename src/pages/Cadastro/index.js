@@ -1,7 +1,7 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-import "./Cadastro.css";
+import "./index.css";
 
 export const Cadastro = () => {
   const scheme = Yup.object().shape({

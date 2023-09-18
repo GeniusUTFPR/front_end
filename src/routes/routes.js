@@ -1,4 +1,4 @@
-export const PAGINA_INICIAL = "/pagina-inicial";
+export const PAGINA_INICIAL = "/";
 export const CADASTRO = "/cadastrar";
-export const CADASTRAR_CURSO = "/cadastrar-curso";
-export const AVALIACAO = "/avaliar-monitoria";
+export const CADASTRAR_CURSO = "/curso/cadastrar";
+export const AVALIACAO = "/monitoria/avaliar";

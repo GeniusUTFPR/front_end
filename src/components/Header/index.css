@@ -1,0 +1,9 @@
+.logoHeader {
+  width: 150px;
+}
+
+@media screen and (max-width: 480px) {
+  .botao-voltar {
+    display: none;
+  }
+}

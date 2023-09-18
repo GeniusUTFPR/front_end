@@ -1,4 +1,4 @@
 export { PaginaInicial } from "./PaginaInicial";
-export { Cadastro } from "./Cadastro";
-export { CadastroCurso } from "./CadastrarCurso";
-export { Avaliacao } from "./Avaliacao";
+export { CadastrarUsuario } from "./Usuario/Cadastrar";
+export { CadastrarCurso } from "./Curso/Cadastrar";
+export { Avaliacao } from "./Avaliacao/Cadastrar";

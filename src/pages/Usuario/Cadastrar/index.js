@@ -1,9 +1,9 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-import "./index.css";
+import "./style.css";
 
-export const Cadastro = () => {
+export const CadastrarUsuario = () => {
   const scheme = Yup.object().shape({
     curso: Yup.number().min(
       1,

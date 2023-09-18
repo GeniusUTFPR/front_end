@@ -19,7 +19,7 @@ import WestIcon from '@mui/icons-material/West';
 // import Logo from '../Logo/logo';
 // import { useToken } from '../../contexts/authContext';
 // import { PERFIL } from '../../routes/routes';
-import './index.css';
+import './style.css';
 import LogoHeader from '../../assets/logo.svg';
 
 const StyledAppBar = styled(AppBar)({

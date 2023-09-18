@@ -1,7 +1,7 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { PAGINA_INICIAL } from './routes/routes';
 
-import { PaginaInicial } from './pages/PaginaInicial/PaginaInicial';
+import { PaginaInicial } from './pages/PaginaInicial';
 
 export const App = () => {
   return (

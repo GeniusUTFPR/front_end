@@ -167,3 +167,11 @@ p {
   color: #121212;
   font-weight: bold;
 }
+
+.cadastro-disciplina {
+  margin-top: 200px;
+}
+
+#select-curso {
+  width: 96.5%;
+}

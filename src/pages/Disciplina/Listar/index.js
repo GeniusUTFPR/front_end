@@ -21,8 +21,7 @@ export const ListarDisciplinas = () => {
     async function fetchThesis() {
       try {
         await getDisciplinas(periodo);
-      } catch (error) {
-      }
+      } catch (error) {}
     }
     fetchThesis();
   }, [periodo]);
@@ -89,27 +88,32 @@ export const ListarDisciplinas = () => {
         <div class="lista-botoes">
           {informacoesDisciplinas.length > 0
             ? informacoesDisciplinas.map(item => (
-              <Link to={`/disciplina/${item.id}`}>
-                <button
-                  class="div-botao"
-                  style={{
-                    fontFamily: 'Poppins, sans-serif',
-                    border: 'none',
-                    background: '#121212',
-                    cursor: 'pointer',
-                    textTransform: 'uppercase',
-                    fontWeight: 'bold',
-                    fontSize: '14px',
-                    textAlign: 'left',
-                    paddingLeft: '25px',
-                  }}
-                >
-                  <span style={{ margin: '0' }}>{item.nome}</span>
-                </button>
+                <Link to={`/disciplina/${item.id}`}>
+                  <button
+                    class="div-botao"
+                    style={{
+                      fontFamily: 'Poppins, sans-serif',
+                      border: 'none',
+                      background: '#121212',
+                      cursor: 'pointer',
+                      textTransform: 'uppercase',
+                      fontWeight: 'bold',
+                      fontSize: '14px',
+                      textAlign: 'left',
+                      paddingLeft: '25px',
+                    }}
+                  >
+                    <span style={{ margin: '0' }}>{item.nome}</span>
+                  </button>
                 </Link>
               ))
             : ''}
         </div>
+      </div>
+      <div className="listarDisciplina-botao">
+        <Link to="/disciplina/cadastrar">
+          <button className="botaoCadastrar">Cadastrar nova disciplina</button>
+        </Link>
       </div>
       <div className="footer">
         <Footer />

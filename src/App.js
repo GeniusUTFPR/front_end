@@ -5,11 +5,11 @@ import {
   CADASTRAR_CURSO,
   LISTAR_CURSOS,
   CADASTRAR_AVALIACAO,
-  // CADASTRAR_DISCIPLINA,
+  CADASTRAR_DISCIPLINA,
   LISTAR_DISCIPLINAS,
   CADASTRAR_MONITORIA,
   EDITAR_MONITORIA,
-  MINHAS_MONITORIAS,
+  LISTAR_MONITORIAS,
   LOGIN,
 } from './routes';
 
@@ -19,11 +19,11 @@ import {
   Login,
   CadastrarCurso,
   Avaliacao,
-  // CadastrarDisciplina,
+  CadastrarDisciplina,
   ListarDisciplinas,
   CadastrarMonitoria,
   EditarMonitoria,
-  MinhasMonitorias,
+  ListarMonitorias,
   ListarCursos,
 } from './pages';
 
@@ -36,11 +36,11 @@ export const App = () => {
         <Route exact path={CADASTRAR_CURSO} element={<CadastrarCurso />} />
         <Route exact path={LISTAR_CURSOS} element={<ListarCursos />} />
         <Route exact path={CADASTRAR_AVALIACAO} element={<Avaliacao />} />
-        {/* <Route
+        <Route
           exact
           path={CADASTRAR_DISCIPLINA}
           element={<CadastrarDisciplina />}
-        /> */}
+        />
         <Route
           exact
           path={LISTAR_DISCIPLINAS}
@@ -52,7 +52,11 @@ export const App = () => {
           element={<CadastrarMonitoria />}
         />
         <Route exact path={EDITAR_MONITORIA} element={<EditarMonitoria />} />
-        <Route exact path={MINHAS_MONITORIAS} element={<MinhasMonitorias />} />
+        <Route
+          exact
+          path={LISTAR_MONITORIAS}
+          element={<ListarMonitorias />}
+        />
         <Route exact path={LOGIN} element={<Login />} />
         <Route path="*" element={<Navigate to={LOGIN} />} />
       </Routes>

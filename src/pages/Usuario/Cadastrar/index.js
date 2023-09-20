@@ -1,41 +1,85 @@
-import { useFormik } from "formik";
-import * as Yup from "yup";
+import './style.css';
 
-import "./style.css";
+import { useEffect, useState } from 'react';
+import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom';
+import * as Yup from 'yup';
+
+import { api } from '../../../services';
 
 export const CadastrarUsuario = () => {
+  const navigate = useNavigate();
+
+  const [cursos, setCursos] = useState({});
+
+  async function getCursos() {
+    const { data } = await api.get(`curso/`);
+    setCursos(data);
+  }
+
+  useEffect(() => {
+    async function mudarDisciplina() {
+      await getCursos();
+    }
+
+    mudarDisciplina();
+  }, []);
+
+  async function redirecionarLogin() {
+    navigate('/login');
+  }
+
   const scheme = Yup.object().shape({
-    curso: Yup.number().min(
-      1,
-      "É necessário selecionar o Bacharelado em Ciência da Computação"
-    ),
-    foto_perfil: Yup.string().required(
-      "É necessário inserir o link da sua foto de perfil do github"
-    ),
-    confirmarSenha: Yup.string()
-      .oneOf([Yup.ref("senha"), null], "As senhas não são iguais!")
-      .required("É necessário confirmar sua senha!"),
-    senha: Yup.string()
-      .min(3, "A senha deve ter no mínimo 3 caracteres")
-      .required("É necessário inserir uma senha!"),
+    nome: Yup.string().required('Necessário nome completo'),
     email: Yup.string()
       .email()
-      .required("É necessário inserir um endereço de email!"),
-    registro: Yup.string().required(
-      "É necessário inserir um registro de aluno!"
+      .required('É necessário inserir um endereço de email!'),
+    senha: Yup.string()
+      .min(3, 'A senha deve ter no mínimo 3 caracteres')
+      .required('Necessário senha!'),
+    confirmarSenha: Yup.string()
+      .oneOf([Yup.ref('senha'), null], 'As senhas não são iguais!')
+      .required('Necessário confirmar a senha!'),
+    registro: Yup.string().required('Necessário registro de aluno/professor'),
+    curso: Yup.number().min(1, 'Necessário curso'),
+    foto_perfil: Yup.string().required(
+      'Necessário link da sua foto de perfil do github'
     ),
-    nome: Yup.string().required("É necessário inserir seu nome"),
   });
 
   const formik = useFormik({
     initialValues: {
-      registro: "",
-      nome: "",
-      email: "",
-      senha: "",
-      confirmarSenha: "",
+      tipo: 1,
+      nome: '',
+      email: '',
+      senha: '',
+      confirmarSenha: '',
+      registro: '',
+      foto_perfil: '',
       curso: 0,
-      foto_perfil: "",
+    },
+    onSubmit: async values => {
+      try {
+        const { tipo, nome, email, senha, registro, curso, foto_perfil } =
+          values;
+        await scheme.validate(values);
+
+        await api.post('usuario/', {
+          tipo,
+          nome,
+          email,
+          senha,
+          registro,
+          foto_perfil: `https://github.com/${foto_perfil}.png`,
+          curso: parseInt(curso),
+        });
+
+        alert('Você foi cadastrado com sucesso!');
+
+        redirecionarLogin();
+      } catch (error) {
+        alert(error);
+      }
     },
   });
 
@@ -64,7 +108,7 @@ export const CadastrarUsuario = () => {
             onChange={formik.handleChange}
             value={formik.values.email}
             className={`${
-              formik.touched.email && formik.errors.email ? "error-input" : ""
+              formik.touched.email && formik.errors.email ? 'error-input' : ''
             }`}
             required
           />
@@ -106,6 +150,9 @@ export const CadastrarUsuario = () => {
             <option value={0} defaultValue>
               Selecione seu curso
             </option>
+            {cursos.length > 0
+              ? cursos.map(item => <option value={item.id}>{item.nome}</option>)
+              : ''}
           </select>
           <input
             className="linkGitHub"
@@ -120,7 +167,10 @@ export const CadastrarUsuario = () => {
           <input type="submit" className="botaoCadastrar" value="Entrar" />
         </form>
         <div className="login">
-          Já possui conta? <button className="botaoLogin">Entre aqui!</button>
+          Já possui conta?{' '}
+          <button className="botaoLogin" onClick={redirecionarLogin}>
+            Entre aqui!
+          </button>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   AppBar,
   Toolbar,
@@ -12,92 +12,98 @@ import {
   MenuItem,
   Container,
   Tooltip,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import { styled } from "@mui/material/styles";
-import WestIcon from "@mui/icons-material/West";
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import { styled } from '@mui/material/styles';
+import WestIcon from '@mui/icons-material/West';
+import { useNavigate } from 'react-router-dom';
+
 // import Logo from '../Logo/logo';
 // import { useToken } from '../../contexts/authContext';
 // import { PERFIL } from '../../routes/routes';
-import "./header.css";
-import LogoHeader from "../../assets/logo.svg";
+import './style.css';
+import LogoHeader from '../../assets/logo.svg';
 
 const StyledAppBar = styled(AppBar)({
-  zIndex: (theme) => theme.zIndex.drawer + 1,
+  zIndex: theme => theme.zIndex.drawer + 1,
 });
 
 const StyledProfileImage = styled(Avatar)({
-  marginLeft: (theme) => theme.spacing(2),
-  border: "3px solid var(--cor-primaria);",
-  "&:hover": {
-    cursor: "pointer",
+  marginLeft: theme => theme.spacing(2),
+  border: '3px solid #FECC00',
+  '&:hover': {
+    cursor: 'pointer',
   },
 });
 
 const BootstrapButton = styled(Button)({
-  boxShadow: "none",
+  boxShadow: 'none',
   fontSize: 11,
-  padding: "6px 12px",
-  height: "30px",
-  width: "125px",
-  border: "2px solid",
-  borderRadius: "20px",
+  padding: '6px 12px',
+  height: '30px',
+  width: '125px',
+  border: '2px solid',
+  borderRadius: '20px',
   lineHeight: 1.5,
-  backgroundColor: "#121212",
-  borderColor: "var(--cor-primaria)",
-  fontFamily: "Poppins",
-  color: "white",
-  textTransform: "capitalize",
-  marginRight: "20px",
-  "&:hover": {
-    border: "4px solid var(--cor-primaria)",
-    boxShadow: "none",
+  backgroundColor: '#121212',
+  borderColor: '#FECC00',
+  fontFamily: 'Poppins',
+  color: 'white',
+  textTransform: 'capitalize',
+  marginRight: '20px',
+  '&:hover': {
+    border: '4px solid #FECC00',
+    boxShadow: 'none',
   },
 });
 
 const BackButton = styled(Button)({
-  boxShadow: "none",
+  boxShadow: 'none',
   fontSize: 0,
-  padding: "20px",
-  height: "20px",
-  width: "20px",
-  borderRadius: "10px",
-  backgroundColor: "#121212",
+  padding: '20px',
+  height: '20px',
+  width: '20px',
+  borderRadius: '10px',
+  backgroundColor: '#121212',
   minWidth: 30,
-  marginLeft: "40px",
-  "&:hover": {
-    backgroundColor: "#555555",
-    cursor: "pointer",
+  marginLeft: '40px',
+  '&:hover': {
+    backgroundColor: '#555555',
+    cursor: 'pointer',
   },
-  "@media screen and (min-width: 0)": {
-    display: "none",
+  '@media screen and (min-width: 0)': {
+    display: 'none',
   },
-  "@media screen and (min-width: 900px)": {
-    display: "flex",
+  '@media screen and (min-width: 900px)': {
+    display: 'flex',
   },
 });
 
 const pagesEstudante = [
-  { label: "Página inicial", url: "/monitorias/minhas-monitorias" },
-  { label: "Cursos", url: "/lista-de-cursos" },
+  { label: 'Página inicial', url: '/' },
+  { label: 'Cursos', url: '/curso/listar' },
 ];
 // const pagesProfessor = [
 //   { label: 'Página inicial', url: '/editar-disciplina' },
 //   { label: 'PAlunos', url: '/listar-palunos' },
 // ];
-const settings = ["Perfil", "Sair"];
+const settings = ['Perfil', 'Sair'];
 
 export const Header = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   // const { usuario, handleLogout } = useToken();
+
+  async function redirecionarLogin() {
+    navigate('/login');
+  }
 
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
-  const handleOpenNavMenu = (event) => {
+  const handleOpenNavMenu = event => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
+  const handleOpenUserMenu = event => {
     setAnchorElUser(event.currentTarget);
   };
 
@@ -110,29 +116,29 @@ export const Header = () => {
   };
 
   return (
-    <div style={{ position: "fixed", top: 30, left: 0, right: 0 }}>
+    <div style={{ position: 'fixed', top: 30, left: 0, right: 0 }}>
       <Box sx={{ flexGrow: 1 }}>
         <StyledAppBar
           position="static"
-          style={{ backgroundColor: "#0C0C0C", boxShadow: "none" }}
+          style={{ backgroundColor: '#0C0C0C', boxShadow: 'none' }}
         >
           <Container maxWidth="xl">
             <Toolbar
               disableGutters
               sx={{
-                display: { xs: "flex", md: "" },
-                justifyContent: { xs: "space-between", md: "" },
+                display: { xs: 'flex', md: '' },
+                justifyContent: { xs: 'space-between', md: '' },
               }}
             >
               <BackButton
                 className="botao-voltar"
-                style={{ marginRight: "10px" }}
+                style={{ marginRight: '10px' }}
                 onClick={() => window.history.back()}
               >
-                <WestIcon style={{ color: "var(--cor-primaria)" }} />
+                <WestIcon style={{ color: '#FECC00' }} />
               </BackButton>
 
-              <Box sx={{ display: { xs: "flex", md: "none" } }}>
+              <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                 <IconButton
                   size="large"
                   aria-label="account of current user"
@@ -147,18 +153,18 @@ export const Header = () => {
                   id="menu-appbar"
                   anchorEl={anchorElNav}
                   anchorOrigin={{
-                    vertical: "bottom",
-                    horizontal: "left",
+                    vertical: 'bottom',
+                    horizontal: 'left',
                   }}
                   keepMounted
                   transformOrigin={{
-                    vertical: "top",
-                    horizontal: "left",
+                    vertical: 'top',
+                    horizontal: 'left',
                   }}
                   open={Boolean(anchorElNav)}
                   onClose={handleCloseNavMenu}
                   sx={{
-                    display: { xs: "block", md: "none" },
+                    display: { xs: 'block', md: 'none' },
                   }}
                 >
                   {/* {usuario.tipo === 4 ? (
@@ -169,7 +175,7 @@ export const Header = () => {
                             key={page.label}
                             onClick={handleCloseNavMenu}
                           >
-                            <Typography textAlign="center" color="#0C0C0C">
+                            <Typography textAlign='center' color='#0C0C0C'>
                               {page.label}
                             </Typography>
                           </MenuItem>
@@ -178,7 +184,7 @@ export const Header = () => {
                     </div>
                   ) : ( */}
                   <div>
-                    {pagesEstudante.map((page) => (
+                    {pagesEstudante.map(page => (
                       <Link to={page.url}>
                         <MenuItem key={page.label} onClick={handleCloseNavMenu}>
                           <Typography textAlign="center" color="#0C0C0C">
@@ -191,13 +197,15 @@ export const Header = () => {
                   {/* )} */}
                 </Menu>
               </Box>
-              <img src={LogoHeader} alt="Logo" className="logoHeader" />
+              <Link to="/">
+                <img src={LogoHeader} alt="Logo" className="logoHeader" />
+              </Link>
               <Box
                 sx={{
                   flexGrow: 1,
-                  display: { xs: "none", md: "flex" },
-                  justifyContent: "flex-end",
-                  marginRight: "",
+                  display: { xs: 'none', md: 'flex' },
+                  justifyContent: 'flex-end',
+                  marginRight: '',
                 }}
               >
                 {/* {usuario.tipo === 4 ? (
@@ -215,7 +223,7 @@ export const Header = () => {
                   </div>
                 ) : ( */}
                 <div>
-                  {pagesEstudante.map((page) => (
+                  {pagesEstudante.map(page => (
                     <Link to={page.url}>
                       <BootstrapButton
                         key={page.label}
@@ -235,31 +243,31 @@ export const Header = () => {
                   </IconButton>
                 </Tooltip>
                 <Menu
-                  sx={{ mt: "45px" }}
+                  sx={{ mt: '45px' }}
                   id="menu-appbar"
                   anchorEl={anchorElUser}
                   anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
+                    vertical: 'top',
+                    horizontal: 'right',
                   }}
                   keepMounted
                   transformOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
+                    vertical: 'top',
+                    horizontal: 'right',
                   }}
                   open={Boolean(anchorElUser)}
                   onClose={handleCloseUserMenu}
                 >
-                  {settings.map((setting) => (
+                  {settings.map(setting => (
                     <MenuItem
-                      sx={{ borderBottom: "1px dotted #ccc" }}
+                      sx={{ borderBottom: '1px dotted #ccc' }}
                       key={setting}
                       onClick={() => {
                         handleCloseUserMenu();
-                        if (setting === "Perfil") {
+                        if (setting === 'Perfil') {
                           // navigate(`${PERFIL}`);
                         }
-                        // if (setting === 'Sair') handleLogout();
+                        if (setting === 'Sair') redirecionarLogin();
                       }}
                     >
                       <Typography textAlign="center">{setting}</Typography>

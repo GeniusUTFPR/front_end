@@ -1,16 +1,41 @@
-import { useFormik } from "formik";
-import * as Yup from "yup";
+import './style.css';
 
-import "./style.css";
+import { useNavigate } from 'react-router-dom';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+
+import { api } from '../../../services';
 
 export const CadastrarCurso = () => {
+  const navigate = useNavigate();
+
+  async function redirecionarPaginaInicial() {
+    navigate('/');
+  }
+
   const scheme = Yup.object().shape({
-    curso: Yup.string().required("É necessário inserir o nome do curso."),
+    nome: Yup.string().required('Necessário nome do curso'),
   });
 
   const formik = useFormik({
     initialValues: {
-      curso: "",
+      nome: '',
+    },
+    onSubmit: async values => {
+      try {
+        const { nome } = values;
+        await scheme.validate(values);
+
+        await api.post('curso/', {
+          nome,
+        });
+
+        alert('Você cadastrou o curso com sucesso!');
+
+        redirecionarPaginaInicial();
+      } catch (error) {
+        alert(error);
+      }
     },
   });
 
@@ -22,13 +47,13 @@ export const CadastrarCurso = () => {
         </h1>
         <form component="form" onSubmit={formik.handleSubmit}>
           <input
-            className="curso"
             type="text"
             placeholder="Nome do curso"
-            name="curso"
-            autoComplete="curso"
+            name="nome"
+            autoComplete="nome"
             onChange={formik.handleChange}
-            value={formik.values.curso}
+            value={formik.values.nome}
+            autoFocus
             required
           />
           <input type="submit" className="botaoCriar" value="Criar" />

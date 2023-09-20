@@ -1,23 +1,23 @@
-import "./style.css";
+import './style.css';
 
-import { Header } from "../../components/Header/header";
-//import { Footer } from "../../components/Footer/footer";
-import LogoHeader from "../../assets/logo.svg";
+import { Header } from '../../components/Header';
+import { Footer } from '../../components/Footer';
+import LogoHeader from '../../assets/logo.svg';
 
 export const PaginaInicial = () => {
   return (
     <div>
-      <div className="header">
+      <div className='header'>
         <Header />
       </div>
-      <div className="inicial-container">
-        <div className="esquerda-container">
-          <div className="imagem-esquerda">
-            <img src={LogoHeader} alt="Logo" className="logoPaginaInicial" />
+      <div className='inicial-container'>
+        <div className='esquerda-container'>
+          <div className='imagem-esquerda'>
+            <img src={LogoHeader} alt='Logo' className='logoPaginaInicial' />
           </div>
-          <div className="frase">
+          <div className='frase'>
             <p>
-              Bem-vindo(a) ao <span class="meu-mentor">Meu Mentor</span>, a
+              Bem-vindo(a) ao <span class='meu-mentor'>Meu Mentor</span>, a
               plataforma online que conecta mentores experientes a indivíduos em
               busca de orientação e crescimento pessoal e profissional. Aqui,
               você encontrará um ambiente seguro e estimulante para desenvolver
@@ -25,29 +25,29 @@ export const PaginaInicial = () => {
             </p>
           </div>
         </div>
-        <div className="direita">
-          <div className="direita-container">
-            <div className="objetivos">Nossos Objetivos:</div>
-            <div className="circles-container">
-              <div className="circles-row">
-                <div className="circle">1</div>
-                <div className="frases">
+        <div className='direita'>
+          <div className='direita-container'>
+            <div className='objetivos'>Nossos Objetivos:</div>
+            <div className='circles-container'>
+              <div className='circles-row'>
+                <div className='circle'>1</div>
+                <div className='frases'>
                   Facilitar a comunicação entre professores, monitores e alunos.
                 </div>
               </div>
-              <div className="circles-row">
-                <div className="circle">2</div>
-                <div className="frases">Melhorar o desempenho acadêmico.</div>
+              <div className='circles-row'>
+                <div className='circle'>2</div>
+                <div className='frases'>Melhorar o desempenho acadêmico.</div>
               </div>
-              <div className="circles-row">
-                <div className="circle">3</div>
-                <div className="frases">
+              <div className='circles-row'>
+                <div className='circle'>3</div>
+                <div className='frases'>
                   Desenvolver habilidades de estudo eficazes.
                 </div>
               </div>
-              <div className="circles-row">
-                <div className="circle">4</div>
-                <div className="frases">
+              <div className='circles-row'>
+                <div className='circle'>4</div>
+                <div className='frases'>
                   Aprofundar o conhecimento em matérias do seu curso.
                 </div>
               </div>
@@ -55,8 +55,8 @@ export const PaginaInicial = () => {
           </div>
         </div>
       </div>
-      <div className="footer">
-        <footer />
+      <div className='footer'>
+        <Footer />
       </div>
     </div>
   );

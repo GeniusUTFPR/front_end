@@ -1,5 +1,5 @@
-import { MonitoriaForm } from '../../../../components/MonitoriaForm/MonitoriaForm';
-import { api } from '../../../../services';
+import { MonitoriaForm } from '../../../components/MonitoriaForm';
+import { api } from '../../../services';
 import { Modal } from '@mui/material';
 
 export const EditarMonitoria = ({ open, onClose, monitoria }) => {

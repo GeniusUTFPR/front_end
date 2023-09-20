@@ -1,9 +1,15 @@
 export { PaginaInicial } from "./PaginaInicial";
 export { CadastrarUsuario } from "./Usuario/Cadastrar";
+export { Login } from "./Usuario/Login";
+
 export { CadastrarCurso } from "./Curso/Cadastrar";
+export { ListarCursos } from "./Curso/Listar";
+
 export { Avaliacao } from "./Avaliacao/Cadastrar";
-export { CriarMonitoria } from "./Cadastro/Monitoria/CriarMonitoria";
-export { EditarMonitoria } from "./Cadastro/Monitoria/EditarMonitoria";
-export { MinhasMonitorias } from "./Cadastro/Monitoria/MinhasMonitorias";
-export { Login } from "./Login";
-export { CadastrarDisciplina } from "./Cadastro/Disciplina";
+
+export { CadastrarMonitoria } from "./Monitoria/Cadastrar";
+export { EditarMonitoria } from "./Monitoria/Editar";
+export { MinhasMonitorias } from "./Monitoria/Listar";
+
+// export { CadastrarDisciplina } from "./Disciplina/Cadastrar";
+export { ListarDisciplinas } from "./Disciplina/Listar";

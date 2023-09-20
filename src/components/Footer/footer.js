@@ -1,11 +1,10 @@
-import React from "react";
-// import { LogoUTFPR } from "../../components";
+import React from 'react';
 
 const Footer = () => {
   return (
     <footer
       style={{
-        backgroundColor: "var(--cor-primaria)",
+        backgroundColor: "#FECC00",
         height: "46px",
         position: "fixed",
         bottom: "0",
@@ -29,8 +28,6 @@ const Footer = () => {
         Copyright © 2023. Todos os direitos reservados | Desenvolvido por:
         Eduardo R. , Rafaela T. , Milena C. , Walancy S.
       </p>
-
-      {/* <LogoUTFPR/> */}
     </footer>
   );
 };

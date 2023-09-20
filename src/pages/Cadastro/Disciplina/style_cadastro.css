@@ -1,0 +1,174 @@
+* {
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+}
+
+body {
+background-color: #0C0C0C;
+}
+
+h1, button {
+  all: unset;
+}
+
+.cadastro-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.cadastro-container .cadastro-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #ffffff;
+
+  background-color: #121212;
+  border-radius: 20px;
+  padding: 50px;
+  width: 720px;
+  margin-top: 50px;
+}
+
+.cadastro-container .logo {
+  margin: 50px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: px;
+  height: 10vh;
+  right: 100px;
+}
+
+.cadastro-container .cadastro-wrapper h1{
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.cadastro-container .conta {
+  color:#FECC00
+}
+
+.cadastro-container form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center
+}
+
+.cadastro-container input {
+  width: 40%;
+  height: 1px;
+  padding: 25px;
+  margin-bottom: 15px;
+  margin: 10px 5px;
+
+  color: #ffffff;
+  border-radius: 100px;
+  border: 3px solid #FECC00;
+  background-color: #121212;
+}
+
+.cadastro-container input:focus {
+  outline: 3.5px solid #866c00;
+}
+
+.cadastro-container input::placeholder {
+  font-size: 14px;
+  color: #424242;
+  font-weight: 500;
+}
+
+.cadastro-container select {
+  width: 60%;
+  height: 60px;
+  padding: 0 5px;
+  margin-bottom: 15px;
+  margin: 10px 5px;
+
+  color: #ffffff;
+  border-radius: 100px;
+  border: 2px solid #FECC00;
+  background-color: #121212;
+}
+
+.cadastro-container select:focus {
+  outline: 3.5px solid #866c00;
+}
+
+.cadastro-container option {
+  color: #ffffff;
+}
+
+.cadastro-container .linkGitHub {
+  width: 90%;
+}
+
+.cadastro-container .botaoCadastrar {
+  margin-top: 30px;
+  width: 40%;
+  height: 20px;
+  padding: 20px;
+
+  font-size: 19px;
+  font-stretch: bold;
+
+  border-radius: 25px;
+  background-color: #FECC00;
+
+  line-height: 10%;
+  font-weight: bold;
+
+  color:#121212;
+
+  cursor: pointer;
+}
+
+.cadastro-container .login {
+  color: #ffffff;
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+.cadastro-container .botaoLogin {
+  background-color: #121212;
+  border-color: #121212;
+  color: #FECC00;
+}
+
+.cadastro-container .botaoLogin:hover{
+  color: #866c00;
+}
+
+.error-input {
+  border-color: red;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+  color: #626262;
+}
+
+.custom-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 20%;
+  background-color: #121212;
+  border-radius: 2rem;
+}

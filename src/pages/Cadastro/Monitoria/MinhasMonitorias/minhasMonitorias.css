@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins,wght@1,300&display=swap");
+
+* {
+  text-decoration: none;
+}
+
+body {
+  background-color: #0c0c0c;
+}
+
+p {
+  all: unset;
+}
+
+.div-master {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 120px;
+}
+
+.minhas-monitorias-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  font-family: "Poppins";
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+
+  border: none;
+  background-color: #121212;
+  border-radius: 10px;
+  padding: 20px;
+
+  width: 280px;
+  height: 10px;
+
+  margin-bottom: 10px;
+}
+
+.minhas-monitorias-lista {
+  display: flex;
+  background-color: #121212;
+  margin-bottom: 10px;
+  margin: 1vw 0;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.minhas-monitorias-card {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #0c0c0c;
+  border: 2px solid #0c0c0c;
+  margin-bottom: 10px;
+  width: 300px;
+  height: 300px;
+  margin: 1vw 1vw;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.minhas-monitorias-card:hover {
+  border: 2px solid #FECC00;
+}
+
+.minhas-monitorias-card-titulo {
+  display: flex;
+
+  background-color: #0c0c0c;
+  min-height: 75px;
+  max-height: 75px;
+  padding-bottom: 15px;
+
+  color: #ffffff;
+  text-align: start;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.minhas-monitorias-card-info {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+
+  background-color: #0c0c0c;
+
+  color: #ffffff;
+  font-family: "Poppins";
+  font-size: 13px;
+}
+
+.minhas-monitorias-icons {
+  display: flex;
+  justify-content: space-between;
+
+  background-color: #0c0c0c;
+
+  height: 600;
+}
+
+.minhas-monitorias-aviso {
+  display: flex;
+
+  height: 30px;
+  padding-bottom: 15px;
+
+  color: #ffffff;
+  font-family: "Poppins";
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.botaoCriarMonitoria {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0c0c0c;
+  background-color: #FECC00;
+  border: 2px solid #FECC00;
+  border-radius: 10px;
+  width: 300px;
+  padding: 10px 5px;
+  cursor: pointer;
+  font-weight: bold;
+}

@@ -2,3 +2,8 @@ export { PaginaInicial } from "./PaginaInicial";
 export { CadastrarUsuario } from "./Usuario/Cadastrar";
 export { CadastrarCurso } from "./Curso/Cadastrar";
 export { Avaliacao } from "./Avaliacao/Cadastrar";
+export { CriarMonitoria } from "./Cadastro/Monitoria/CriarMonitoria";
+export { EditarMonitoria } from "./Cadastro/Monitoria/EditarMonitoria";
+export { MinhasMonitorias } from "./Cadastro/Monitoria/MinhasMonitorias";
+export { Login } from "./Login";
+export { CadastrarDisciplina } from "./Cadastro/Disciplina";

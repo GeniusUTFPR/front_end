@@ -1,8 +1,8 @@
-import './style.css';
+import "./style.css";
 
-import { Header, Footer } from "../../components";
-
-import LogoHeader from '../../assets/logo.svg';
+import { Header } from "../../components/Header/header";
+//import { Footer } from "../../components/Footer/footer";
+import LogoHeader from "../../assets/logo.svg";
 
 export const PaginaInicial = () => {
   return (
@@ -56,7 +56,7 @@ export const PaginaInicial = () => {
         </div>
       </div>
       <div className="footer">
-        <Footer />
+        <footer />
       </div>
     </div>
   );

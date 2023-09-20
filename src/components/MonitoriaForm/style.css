@@ -78,7 +78,7 @@
   }
   
   .monitoria-container option {
-    color: #008844;
+    color: #ffffff;
   }
   
   .monitoria-container .descricao {
@@ -95,7 +95,7 @@
   }
   
   .monitoria-container input:focus {
-    outline: 2px solid #008844;
+    outline: 2px solid #FECC00;
   }
   
   .monitoria-container input::placeholder {

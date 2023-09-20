@@ -1,0 +1,17 @@
+.logoGenius-esquerda {
+    width: 200px;
+    margin-left: 40px;
+    cursor: pointer;
+  }
+  
+  @media screen and (min-width: 0) {
+    .logoHeader-esquerda {
+      display: none;
+    }
+  }
+  
+  @media screen and (min-width: 900px) {
+    .logoHeader-esquerda {
+      display: flex;
+    }
+  }

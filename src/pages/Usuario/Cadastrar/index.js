@@ -17,17 +17,17 @@ export const CadastrarUsuario = () => {
     setCursos(data);
   }
 
-  async function redirecionarLogin() {
-    navigate('/entrar');
-  }
-
   useEffect(() => {
     async function mudarDisciplina() {
       await getCursos();
     }
-  
+
     mudarDisciplina();
   }, []);
+
+  async function redirecionarLogin() {
+    navigate('/login');
+  }
 
   const scheme = Yup.object().shape({
     nome: Yup.string().required('Necessário nome completo'),
@@ -60,7 +60,8 @@ export const CadastrarUsuario = () => {
     },
     onSubmit: async values => {
       try {
-        const { tipo, nome, email, senha, registro, curso, foto_perfil } = values;
+        const { tipo, nome, email, senha, registro, curso, foto_perfil } =
+          values;
         await scheme.validate(values);
 
         await api.post('usuario/', {
@@ -150,9 +151,7 @@ export const CadastrarUsuario = () => {
               Selecione seu curso
             </option>
             {cursos.length > 0
-              ? cursos.map(item => (
-                  <option value={item.id}>{item.nome}</option>
-                ))
+              ? cursos.map(item => <option value={item.id}>{item.nome}</option>)
               : ''}
           </select>
           <input
@@ -168,7 +167,10 @@ export const CadastrarUsuario = () => {
           <input type="submit" className="botaoCadastrar" value="Entrar" />
         </form>
         <div className="login">
-          Já possui conta? <button className="botaoLogin">Entre aqui!</button>
+          Já possui conta?{' '}
+          <button className="botaoLogin" onClick={redirecionarLogin}>
+            Entre aqui!
+          </button>
         </div>
       </div>
     </div>

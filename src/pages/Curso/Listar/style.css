@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins,wght@1,300&display=swap");
+
+* {
+  text-decoration: none;
+}
+
+body {
+  background-color: #0c0c0c;
+}
+
+.main-cursos {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+}
+
+.container-cursos {
+  display: flex;
+  justify-content: center;
+  width: 120vh;
+  flex-wrap: wrap;
+  margin-top: 3vh;
+}
+
+.quadro-curso {
+  display: flex;
+  align-items: center;
+  background-color: #121212;
+  display: flex;
+  padding: 10px;
+  border-radius: 1rem;
+  width: 350px;
+  height: 100px;
+  margin: 0.5rem 2rem;
+}
+
+.cursor-block {
+  cursor: not-allowed;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.quadro-esquerda {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+  background-color: #FECC00;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  margin-right: 2rem;
+  margin-left: 20px;
+}
+
+.quadro-direita {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 440px) {
+  .quadro-curso {
+    width: 250px;
+    height: 75px;
+    align-items: center;
+  }
+
+  .quadro-esquerda {
+    display: none;
+  }
+  
+  .footer {
+    display: none;
+  }
+}

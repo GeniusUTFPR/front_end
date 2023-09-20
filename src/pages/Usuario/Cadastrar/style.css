@@ -144,10 +144,11 @@ button {
   background-color: #121212;
   border-color: #121212;
   color: #fecc00;
+  cursor: pointer;
 }
 
 .cadastro-container .botaoLogin:hover {
-  color: #fecc00;
+  color: #866c00;
 }
 
 .error-input {

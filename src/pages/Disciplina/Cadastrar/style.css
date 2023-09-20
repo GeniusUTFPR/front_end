@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins,wght@1,300&display=swap");
+
+* {
+  text-decoration: none;
+}
+
+body {
+  background-color: #0c0c0c;
+}
+
+p {
+  all: unset;
+}
+
+.div-pai {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 80px;
+}
+
+.div-pai .container-materia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  font-family: "Poppins";
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+
+  border: none;
+  background-color: #121212;
+  border-radius: 10px;
+  padding: 20px;
+
+  width: 280px;
+  height: 10px;
+
+  margin-bottom: 10px;
+}
+
+.div-pai .container-professor-monitor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: #ffffff;
+  font-family: "Poppins";
+  cursor: pointer;
+
+  border: none;
+  background-color: #0c0c0c;
+  border-radius: 10px;
+
+  width: 350px;
+}
+
+.div-pai .titulo {
+  margin: 0;
+  font-weight: bold;
+  color: #3f3f3f;
+}
+
+.div-pai input::placeholder {
+  font-size: 14px;
+  color: #424242;
+
+  font-family: "Poppins";
+  font-weight: 500;
+}
+
+.div-pai .professor {
+  display: flex;
+  background-color: #121212;
+  margin-bottom: 10px;
+  width: 50vw;
+  height: 150px;
+  margin: 1vw 0;
+  border-radius: 15px;
+  padding: 20px;
+  align-items: "flex-start";
+}
+
+.div-pai .professorEsquerda {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 15%;
+}
+
+.div-pai .professorDireita {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: 10vw;
+  gap: 2px;
+}
+
+.div-pai .monitor {
+  display: flex;
+  background-color: #121212;
+  margin-bottom: 10px;
+  width: 800px;
+  height: 150px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.div-pai .monitor-mais {
+  display: flex;
+  background-color: #00ff7e;
+  margin-bottom: 10px;
+  width: 250px;
+  height: 30px;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  text-align: center;
+  margin-top: 2vw;
+  color: #0c0c0c;
+  font-weight: 600;
+}
+
+.div-pai .quadrado-interior {
+  padding: 1px;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin-right: 3vh;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+}
+
+.ProfessorIcon{
+  width: 50px;
+}
+
+.UserIcon{
+  width: 50px;
+}
+
+.div-pai .quadrado-direita {
+  display: flex;
+  flex-direction: column;
+}
+
+.div-pai .quadrado-direita .titulo-professor {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.div-pai .texto-um {
+  color: #121212;
+}
+
+.div-pai .texto-dois {
+  color: #121212;
+  font-weight: bold;
+}

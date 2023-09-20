@@ -33,7 +33,7 @@ export const ListarCursos = () => {
           {cursos.length > 0
             ? cursos.map(item => (
                 // <option value={item.id}>{item.nome}</option>
-                <Link to='/disciplina/listar'>
+                <Link to="/disciplina/listar">
                   <div className="quadro-curso">
                     <div className="quadro-esquerda"></div>
                     <div className="quadro-direita">
@@ -47,6 +47,11 @@ export const ListarCursos = () => {
               ))
             : ''}
         </div>
+      </div>
+      <div className="listarDisciplina-botao">
+        <Link to="/curso/cadastrar">
+          <button className="botaoCadastrar">Cadastrar novo curso</button>
+        </Link>
       </div>
       <div className="footer">
         <Footer />

@@ -51,3 +51,35 @@
   border-radius: 10px;
   margin-right: 3vh;
 }
+
+.listarDisciplina-botao {
+  display: flex;
+  justify-content: center
+}
+
+.listarDisciplina-botao a {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  width: 20%;
+  height: 20px;
+  padding: 20px;
+
+  font-size: 19px;
+  font-stretch: bold;
+
+  border-radius: 25px;
+  border: 6px solid #fecc00;
+  background-color: #fecc00;
+
+  line-height: 10%;
+  font-weight: bold;
+
+  color: #121212;
+
+  cursor: pointer;
+}
+
+.listarDisciplina-botao a:hover {
+  border: 6px solid #866c00;;
+}

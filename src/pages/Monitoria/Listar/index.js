@@ -1,130 +1,137 @@
-import "./minhasMonitorias.css";
+import './style.css';
 
-import { useState } from "react";
-import Header from "../../../components/Header";
-//import Footer from "../../../../components/Footer/footer";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
-import { Link } from "react-router-dom";
-import { DeleteModal } from "../../../components/DeleteModal";
-import { api } from "../../../services";
+import LaptopIcon from '@mui/icons-material/Laptop';
+import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
-import { EditarMonitoria } from "../Editar";
+import { api } from '../../../services';
+import Header from '../../../components/Header';
+import Footer from '../../../components/Footer';
 
-export const MinhasMonitorias = () => {
-  const [monitoria, setMonitoria] = useState([]);
-  const [monitoriaList, setMonitoriaList] = useState({});
-  const [quantidadeMonitorias, setQuantidadeMonitorias] = useState({});
+export const ListarMonitorias = () => {
+  const [informacoes, setInformacoes] = useState({});
+  const [disciplina, setDisciplina] = useState({});
 
-  async function getMonitorias(id) {    
-    const { data } = await api.get(`monitoria/verificarLimite/${id}`);
-    setQuantidadeMonitorias(data);
+  async function getMonitorias() {
+    const { data } = await api.get(`monitoria/`);
+    setInformacoes(data);
   }
 
-  const [edition, setEdition] = useState(false);
-  const [deletion, setDeletion] = useState(false);
+  async function getDisciplinas() {
+    const { data } = await api.get(`disciplina/`);
+    setDisciplina(data);
+  }
 
-  const handleEditionOpen = () => setEdition(true);
-  const handleEditionClose = () => setEdition(false);
-  const handleDeletionOpen = () => setDeletion(true);
-  const handleDeletionClose = () => setDeletion(false);
-
-  const handleEditionClick = (item) => {
-    setMonitoria(item);
-    handleEditionOpen();
-  };
-
-  const handleDeleteClick = (item) => {
-    setMonitoria(item);
-    handleDeletionOpen();
-  };
-
-  const handleDelete = async ({ id, name }) => {
-    try {
-      await api.delete(`monitoria/${id}`);
-      alert("Monitoria " + name + " deletada com sucesso!");
-      handleDeletionClose();
-      document.location.reload();
-    } catch (error) {
-      console.log(error);
+  useEffect(() => {
+    async function fetchThesis() {
+      try {
+        await getMonitorias();
+        await getDisciplinas();
+      } catch (error) {}
     }
-  };
-
+    fetchThesis();
+  }, []);
 
   return (
     <div>
-      <div>
+      <div className="header">
         <Header />
       </div>
-
-      <div className="div-master">
-        <EditarMonitoria
-          open={edition}
-          onClose={handleEditionClose}
-          monitoria={monitoria}
-        />
-        <DeleteModal
-          open={deletion}
-          item={monitoria}
-          onClose={handleDeletionClose}
-          onDelete={handleDelete}
-        />
-        <div className="minhas-monitorias-container">Minhas Monitorias</div>
-        <div className="minhas-monitorias-lista">
-          {monitoriaList.length > 0 ? (
-            monitoriaList.map((item) => (
-              <div className="minhas-monitorias-card">
-                <div className="minhas-monitorias-card-titulo">
-                  {item.disciplina.nome}
-                </div>
-                <div className="minhas-monitorias-card-info">
-                  <p>R$ {item.valor_por_hora}</p>
-                  <br></br>
-                  <p>Segunda: {item.segunda}</p>
-                  <p>Terça: {item.terca}</p>
-                  <p>Quarta: {item.quarta}</p>
-                  <p>Quinta: {item.quinta}</p>
-                  <p>Sexta: {item.sexta}</p>
-                  <p>Sábado: {item.sabado}</p>
-                </div>
-                <div className="minhas-monitorias-icons">
-                  <div className="minhas-monitorias-editar">
-                    <EditIcon
-                      style={{ color: "#00ff7e" }}
-                      size="large"
-                      onClick={() => handleEditionClick(item)}
-                    />
-                  </div>
-                  <div className="minhas-monitorias-deletar">
-                    <DeleteIcon
-                      style={{ color: "#00ff7e" }}
-                      size="large"
-                      onClick={() => handleDeleteClick(item)}
-                    />
-                  </div>
-                </div>
-              </div>
-            ))
-          ) : (
-            <div className="minhas-monitorias-aviso">
-              Nenhuma monitoria registrada.
-            </div>
-          )}
-        </div>
-        {quantidadeMonitorias < 3 ? (
-          <div className="minhas-monitorias-final">
-            <Link to="/criar-monitoria">
-              <div className="botaoCriarMonitoria">
-                Cadastre mais monitorias!
-              </div>
-            </Link>
+      <div
+        style={{
+          display: 'flex',
+          gap: '30px',
+          margin: '20px',
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginTop: '10rem',
+        }}
+      >
+        <button
+          class="div-externa"
+          style={{
+            fontFamily: 'Arial',
+            border: 'none',
+            background: '#121212',
+            cursor: 'pointer',
+          }}
+        >
+          <div
+            class="div-interna"
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              textAlign: 'right',
+            }}
+          >
+            <LaptopIcon fontSize="large" style={{ color: '#121212' }} />
           </div>
-        ) : (
-          ""
-        )}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+            }}
+          >
+            <p style={{ margin: '0' }}>Lista de monitorias</p>
+            <p style={{ fontWeight: 'bold', color: '#3F3F3F' }}></p>
+          </div>
+        </button>
       </div>
-      <div>
-        <footer />
+      <div
+        style={{
+          display: 'flex',
+          gap: '30px',
+          margin: '20px',
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginTop: '10px',
+        }}
+      >
+        <div className="lista-botoes">
+          {informacoes.length > 0
+            ? informacoes.map(item => {
+                const disciplinaEncontrada = disciplina.find(
+                  item2 => item2.id === item.disciplina.id
+                );
+                return (
+                  <Link to={`/monitoria/${item.id}`} key={item.id}>
+                    <button
+                      className="div-botao"
+                      style={{
+                        fontFamily: 'Poppins, sans-serif',
+                        border: 'none',
+                        background: '#121212',
+                        cursor: 'pointer',
+                        textTransform: 'uppercase',
+                        fontWeight: 'bold',
+                        fontSize: '14px',
+                        textAlign: 'left',
+                        paddingLeft: '25px',
+                      }}
+                    >
+                      <span style={{ margin: '0' }}>
+                        {disciplinaEncontrada ? (
+                          <p>Nome da Disciplina: {disciplinaEncontrada.nome}</p>
+                        ) : (
+                          <p>A disciplina não está definida.</p>
+                        )}
+                      </span>
+                    </button>
+                  </Link>
+                );
+              })
+            : null}
+        </div>
+      </div>
+      <div className="listarDisciplina-botao">
+        <Link to="/disciplina/cadastrar">
+          <button className="botaoCadastrar">Cadastrar nova disciplina</button>
+        </Link>
+      </div>
+      <div className="footer">
+        <Footer />
       </div>
     </div>
   );

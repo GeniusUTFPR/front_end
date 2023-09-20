@@ -1,7 +1,7 @@
 import React from "react";
 // import { LogoUTFPR } from "../../components";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer
       style={{
@@ -34,5 +34,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

@@ -11,6 +11,7 @@ import {
   EDITAR_MONITORIA,
   LISTAR_MONITORIAS,
   LOGIN,
+  PERFIL,
 } from './routes';
 
 import {
@@ -25,6 +26,7 @@ import {
   EditarMonitoria,
   ListarMonitorias,
   ListarCursos,
+  Perfil
 } from './pages';
 
 export const App = () => {
@@ -32,6 +34,7 @@ export const App = () => {
     <BrowserRouter>
       <Routes>
         <Route exact path={PAGINA_INICIAL} element={<PaginaInicial />} />
+        <Route exact path={PERFIL} element={<Perfil />} />
         <Route exact path={CADASTRAR_USUARIO} element={<CadastrarUsuario />} />
         <Route exact path={CADASTRAR_CURSO} element={<CadastrarCurso />} />
         <Route exact path={LISTAR_CURSOS} element={<ListarCursos />} />

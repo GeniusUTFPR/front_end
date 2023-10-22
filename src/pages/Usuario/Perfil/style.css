@@ -1,0 +1,176 @@
+.inicial-container button:active {
+  transform: scale(1);
+}
+
+.inicial-container {
+  font-family: poppins;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  margin: 0 !important;
+  height: 49vw;
+}
+
+.inicial-container .section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 70vw;
+  height: 30rem;
+  border-radius: 30px;
+  justify-content: center;
+  background-color: #50505062;
+  border: 1px solid #FECC00;
+  background: #121212;
+}
+
+.inicial-container .section .div-esquerda {
+  color: aliceblue;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inicial-container .section .div-direita {
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  font-size: 15px;
+  gap: 0.5vw;
+  justify-content: center;
+}
+
+.inicial-container .div-direita .campo-nome {
+  display: flex;
+  flex-direction: column;
+}
+
+.inicial-container .div-direita .campo-periodo {
+  display: flex;
+  flex-direction: column;
+}
+
+.inicial-container .div-direita .campo-curso {
+  display: flex;
+  flex-direction: column;
+}
+
+.inicial-container .div-direita input {
+  border-radius: 15px;
+  width: 22vw;
+  padding: 1rem;
+  background: #2B2B2B;
+  border: none;
+  border-color: #FECC00;
+  outline: #FECC00;
+  color: white;
+  font-weight: 200;
+  transition: transform 0.2s;
+}
+
+.inicial-container .div-direita input:focus {
+  transform: scale(1.04);
+
+}
+
+.inicial-container .div-direita label {
+  color: #FECC00;
+  margin: 0 0 0 1vw
+}
+
+.inicial-container .div-direita button {
+  background-color: #FECC00;
+  color: #121212;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  font-weight: 700;
+  margin: 1vw 0 0 0;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.inicial-container .div-direita button:hover {
+  transform: scale(1.1);
+}
+
+.inicial-container .div-esquerda button {
+  background: #FECC00;
+  border-radius: 12px;
+  padding: 1vw;
+  padding: 0.7vw 1.3vw;
+  font-size: 15px;
+  color: #121212;
+  font-weight: 600;
+  display: flex;
+  cursor: pointer;
+  transition: transform 0.2s;
+
+}
+
+.inicial-container .div-esquerda button:hover {
+  transform: scale(1.1);
+}
+
+
+.inicial-container .div-esquerda .perfil {
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.1vw;
+
+}
+
+.inicial-container .div-esquerda .perfil img {
+  width: 9rem;
+  height: 9rem;
+  border-radius: 100%;
+  background-color: #434343;
+  border: 4px solid #FECC00;
+}
+
+.inicial-container .div-esquerda .perfil button {
+  margin: 1vw;
+  font-size: 15px;
+}
+
+.inicial-container .div-esquerda .perfil .fotoPadrao {
+  border-radius: 100%;
+  width: 7rem;
+  height: 7rem;
+  padding: 0.5vw;
+  background-color: #1b1b1b;
+  border: 4px solid #FECC00;
+
+}
+
+.inicial-container .div-esquerda input {
+  background: #FECC00;
+  border-radius: 12px;
+  padding: 1vw;
+  padding: 0.7vw 1.3vw;
+  font-size: 15px;
+  color: #121212;
+  font-weight: 600;
+  display: flex;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.inicial-container .div-esquerda input button {
+  background: none;
+}
+
+
+.inicial-container .div-esquerda .tipo-perfil {
+  font-weight: 200;
+  font-size: 12px;
+}

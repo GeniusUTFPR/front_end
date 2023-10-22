@@ -7,3 +7,8 @@
     display: none;
   }
 }
+
+.header-teste {
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid #ffffff17;
+}

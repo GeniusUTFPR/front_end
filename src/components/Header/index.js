@@ -23,6 +23,7 @@ import { useNavigate } from 'react-router-dom';
 // import { PERFIL } from '../../routes/routes';
 import './style.css';
 import LogoHeader from '../../assets/logo.svg';
+import { Perfil } from '../../pages/Usuario/Perfil';
 
 const StyledAppBar = styled(AppBar)({
   zIndex: theme => theme.zIndex.drawer + 1,
@@ -91,10 +92,14 @@ const settings = ['Perfil', 'Sair'];
 
 export const Header = () => {
   const navigate = useNavigate();
-  // const { usuario, handleLogout } = useToken();
+  //const { usuario, handleLogout } = useToken();
 
   async function redirecionarLogin() {
     navigate('/login');
+  }
+
+  async function redirecionarPerfil() {
+    navigate('/perfil');
   }
 
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -116,11 +121,11 @@ export const Header = () => {
   };
 
   return (
-    <div style={{ position: 'fixed', top: 30, left: 0, right: 0 }}>
+    <div className="header-teste" style={{ position: 'fixed', top: 0, left: 0, right: 0 }}>
       <Box sx={{ flexGrow: 1 }}>
         <StyledAppBar
           position="static"
-          style={{ backgroundColor: '#0C0C0C', boxShadow: 'none' }}
+          style={{ background: 'none', boxShadow: 'none' }}
         >
           <Container maxWidth="xl">
             <Toolbar
@@ -264,9 +269,7 @@ export const Header = () => {
                       key={setting}
                       onClick={() => {
                         handleCloseUserMenu();
-                        if (setting === 'Perfil') {
-                          // navigate(`${PERFIL}`);
-                        }
+                        if (setting === 'Perfil') redirecionarPerfil();
                         if (setting === 'Sair') redirecionarLogin();
                       }}
                     >

@@ -1,7 +1,7 @@
 import './style.css';
 
-import { Header } from '../../components/Header';
-import { Footer } from '../../components/Footer';
+import { Header } from '../../../components/Header';
+import { Footer } from '../../../components/Footer';
 import Vetor from '../../assets/vetor.svg';
 
 export const PaginaInicial = () => {
@@ -55,7 +55,7 @@ export const PaginaInicial = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div className='footer'>
         <Footer />
       </div>
     </div>

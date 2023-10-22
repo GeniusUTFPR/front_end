@@ -33,7 +33,8 @@
   color: #ffffff;
   font-size: 16px;
   font-weight: 300;
-  padding: 5vw 9vw 0vw 9vw; /* cima direita baixo esquerda */
+  padding: 5vw 9vw 0vw 9vw;
+  /* cima direita baixo esquerda */
   text-align: justify;
 }
 
@@ -146,7 +147,7 @@
     width: 80%;
   }
 
-  .footer {
+  .footer Footer {
     display: none;
   }
 }

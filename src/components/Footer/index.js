@@ -1,17 +1,11 @@
 import React from 'react';
 import "./style.css";
-// import { LogoUTFPR } from '../../components';
 
 export const Footer = () => {
   return (
     <div className='footer'>
-      <p>
-        {' '}
-        Copyright © 2023. Todos os direitos reservados | Desenvolvido por:
-        Eduardo R. , Rafaela T. , Milena C. , Walancy S.
-      </p>
-
-      {/* <LogoUTFPR/> */}
+      <p>Copyright © 2023. Todos os direitos reservados</p>
+      <p>Universidade Tecnológica Federal do Paraná - Campo Mourão</p>
     </div>
   );
 };

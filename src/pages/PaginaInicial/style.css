@@ -5,7 +5,6 @@
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-between;
-  margin-top: 200px;
   width: 100%;
   justify-content: space-around;
 }
@@ -33,9 +32,6 @@
   color: #ffffff;
   font-size: 16px;
   font-weight: 300;
-  padding: 5vw 9vw 0vw 9vw;
-  /* cima direita baixo esquerda */
-  text-align: justify;
 }
 
 .meu-mentor {
@@ -48,29 +44,47 @@
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
-  width: 35%;
   margin-right: 5%;
+  width: 50%;
   justify-content: center;
 }
 
 .direita-container {
   background-color: #111111;
-  margin: 10px;
+  margin: 3vw 0;
   border-radius: 30px;
-  padding: 50px 5vw;
-}
-
-.objetivos {
+  padding: 3vw 4vw;
   color: #FECC00;
   font-weight: 600;
   font-size: 20px;
   margin-bottom: 8px;
+  border: 2px solid #fecb003f;
+}
+
+.objetivos {
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
 }
 
 .circles-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
+}
+
+.circles-container .circles-container-esquerda {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 1vw;
+}
+
+.circles-container .circles-container-direita {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 1vw;
 }
 
 .circles-row {
@@ -79,6 +93,11 @@
   align-items: center;
   width: 100%;
   margin: 16px 0;
+  transition: transform 0.2s;
+}
+
+.circles-row:hover {
+  transform: scale(1.1);
 }
 
 .circles {

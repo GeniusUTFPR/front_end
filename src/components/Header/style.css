@@ -9,6 +9,7 @@
 }
 
 .header-teste {
-  backdrop-filter: blur(5px);
-  border-bottom: 1px solid #ffffff17;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+  background: #0c0c0c66;
+  backdrop-filter: blur(2px);
 }

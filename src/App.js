@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import {
   CADASTRAR_USUARIO,
   PAGINA_INICIAL,
@@ -10,9 +10,10 @@ import {
   CADASTRAR_MONITORIA,
   EDITAR_MONITORIA,
   LISTAR_MONITORIAS,
+  PERFIL_MONITORIA,
   LOGIN,
   PERFIL,
-} from './routes';
+} from "./routes";
 
 import {
   PaginaInicial,
@@ -25,9 +26,10 @@ import {
   CadastrarMonitoria,
   EditarMonitoria,
   ListarMonitorias,
+  PerfilMonitoria,
   ListarCursos,
-  Perfil
-} from './pages';
+  Perfil,
+} from "./pages";
 
 export const App = () => {
   return (
@@ -55,11 +57,8 @@ export const App = () => {
           element={<CadastrarMonitoria />}
         />
         <Route exact path={EDITAR_MONITORIA} element={<EditarMonitoria />} />
-        <Route
-          exact
-          path={LISTAR_MONITORIAS}
-          element={<ListarMonitorias />}
-        />
+        <Route exact path={LISTAR_MONITORIAS} element={<ListarMonitorias />} />
+        <Route exact path={PERFIL_MONITORIA} element={<PerfilMonitoria />} />
         <Route exact path={LOGIN} element={<Login />} />
         <Route path="*" element={<Navigate to={LOGIN} />} />
       </Routes>

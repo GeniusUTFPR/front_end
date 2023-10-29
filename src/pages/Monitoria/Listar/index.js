@@ -27,7 +27,7 @@ export const ListarMonitorias = () => {
       try {
         await getMonitorias();
         await getDisciplinas();
-      } catch (error) {}
+      } catch (error) { }
     }
     fetchThesis();
   }, []);
@@ -92,36 +92,36 @@ export const ListarMonitorias = () => {
         <div className="lista-botoes">
           {informacoes.length > 0
             ? informacoes.map(item => {
-                const disciplinaEncontrada = disciplina.find(
-                  item2 => item2.id === item.disciplina.id
-                );
-                return (
-                  <Link to={`/monitoria/${item.id}`} key={item.id}>
-                    <button
-                      className="div-botao"
-                      style={{
-                        fontFamily: 'Poppins, sans-serif',
-                        border: 'none',
-                        background: '#121212',
-                        cursor: 'pointer',
-                        textTransform: 'uppercase',
-                        fontWeight: 'bold',
-                        fontSize: '14px',
-                        textAlign: 'left',
-                        paddingLeft: '25px',
-                      }}
-                    >
-                      <span style={{ margin: '0' }}>
-                        {disciplinaEncontrada ? (
-                          <p>Nome da Disciplina: {disciplinaEncontrada.nome}</p>
-                        ) : (
-                          <p>A disciplina não está definida.</p>
-                        )}
-                      </span>
-                    </button>
-                  </Link>
-                );
-              })
+              const disciplinaEncontrada = disciplina.find(
+                item2 => item2.id === item.disciplina.id
+              );
+              return (
+                <Link to={`/monitoria/${item.id}`} key={item.id}>
+                  <button
+                    className="div-botao"
+                    style={{
+                      fontFamily: 'Poppins, sans-serif',
+                      border: 'none',
+                      background: '#121212',
+                      cursor: 'pointer',
+                      textTransform: 'uppercase',
+                      fontWeight: 'bold',
+                      fontSize: '14px',
+                      textAlign: 'left',
+                      paddingLeft: '25px',
+                    }}
+                  >
+                    <span style={{ margin: '0' }}>
+                      {disciplinaEncontrada ? (
+                        <p>Nome da Disciplina: {disciplinaEncontrada.nome}</p>
+                      ) : (
+                        <p>A disciplina não está definida.</p>
+                      )}
+                    </span>
+                  </button>
+                </Link>
+              );
+            })
             : null}
         </div>
       </div>

@@ -11,6 +11,9 @@ export { Avaliacao } from "./Avaliacao/Cadastrar";
 export { CadastrarMonitoria } from "./Monitoria/Cadastrar";
 export { EditarMonitoria } from "./Monitoria/Editar";
 export { ListarMonitorias } from "./Monitoria/Listar";
+export { PerfilMonitoria } from "./Monitoria/PerfilMonitoria";
+
+export { Monitor } from "./Professor/Monitor";
 
 export { CadastrarDisciplina } from "./Disciplina/Cadastrar";
 export { ListarDisciplinas } from "./Disciplina/Listar";

@@ -10,6 +10,7 @@ import {
   CADASTRAR_MONITORIA,
   EDITAR_MONITORIA,
   LISTAR_MONITORIAS,
+  LISTAR_TODAS_MONITORIAS,
   PERFIL_MONITORIA,
   CADASTRAR_MONITOR,
   LOGIN,
@@ -24,6 +25,7 @@ import {
   Avaliacao,
   CadastrarDisciplina,
   ListarDisciplinas,
+  ListarTodasMonitorias,
   CadastrarMonitoria,
   EditarMonitoria,
   ListarMonitorias,
@@ -52,6 +54,11 @@ export const App = () => {
           exact
           path={LISTAR_DISCIPLINAS}
           element={<ListarDisciplinas />}
+        />
+        <Route
+          exact
+          path={LISTAR_TODAS_MONITORIAS}
+          element={<ListarTodasMonitorias />}
         />
         <Route
           exact

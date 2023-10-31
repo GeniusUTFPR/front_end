@@ -23,7 +23,9 @@ import { useNavigate } from 'react-router-dom';
 // import { PERFIL } from '../../routes/routes';
 import './style.css';
 import LogoHeader from '../../assets/logo.svg';
-import { Perfil } from '../../pages/Usuario/Perfil';
+// import { Perfil } from '../../pages/Usuario/Perfil';
+
+import Cookies from 'js-cookie';
 
 const StyledAppBar = styled(AppBar)({
   zIndex: theme => theme.zIndex.drawer + 1,
@@ -92,10 +94,16 @@ const settings = ['Perfil', 'Sair'];
 
 export const Header = () => {
   const navigate = useNavigate();
+
+  function handleLogout() {
+    Cookies.remove('refreshToken', { sameSite: 'strict' });
+    Cookies.remove('accessToken', { sameSite: 'strict' });
+    window.location.href = '/login';
+    }
   //const { usuario, handleLogout } = useToken();
 
   async function redirecionarLogin() {
-    navigate('/login');
+    handleLogout();
   }
 
   async function redirecionarPerfil() {

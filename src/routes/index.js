@@ -2,6 +2,7 @@ export const PAGINA_INICIAL = "/";
 export const CADASTRAR_USUARIO = "/cadastrar";
 export const LOGIN = "/login";
 export const PERFIL = "/perfil";
+export const EDITAR_PERFIL = "/perfil/editar";
 
 export const CADASTRAR_CURSO = "/curso/cadastrar";
 export const LISTAR_CURSOS = "/curso/listar";

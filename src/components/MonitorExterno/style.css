@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins,wght@1,300&display=swap");
+
+* {
+  text-decoration: none;
+}
+
+body {
+  background-color: #0c0c0c;
+}
+
+.monitor-extreno {
+  height: 50px;
+  width: 40vw;
+  display: flex;
+  flex-direction: row;
+  border-radius: 14px;
+  background: #222;
+  transition: border 0.2s;
+  cursor: pointer;
+}
+
+.monitor-extreno:hover {
+  box-shadow: inset 0 -5px 0 0 #565656;
+}
+
+.monitor-extreno .itens {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.monitor-extreno .itens .itens-direita {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.estrelas {
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  color: #ffcc00;
+  width: 15px;
+}
+
+.star.filled {
+  color: #ffcc00;
+}

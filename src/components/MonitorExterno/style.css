@@ -9,6 +9,7 @@ body {
 }
 
 .monitor-extreno {
+  color: #fff;
   height: 50px;
   width: 40vw;
   display: flex;

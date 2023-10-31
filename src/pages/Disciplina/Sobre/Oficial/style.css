@@ -1,9 +1,0 @@
-.monitoria-oficial{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    gap: 1vw;
-}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import VisibilityIcon from '@mui/icons-material/Visibility';
+//import VisibilityIcon from '@mui/icons-material/Visibility';
 import StarIcon from '@mui/icons-material/Star';
 import './style.css';
 import './style-responsive.css';
@@ -38,7 +38,7 @@ export const MonitorExterno = () => {
             <div className="valor">
               <p>R$ 50,00/h</p>
             </div>
-            <VisibilityIcon className='icon' />
+            
           </div>
         </div>
       </div>

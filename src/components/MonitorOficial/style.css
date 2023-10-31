@@ -6,12 +6,12 @@
     border: 1px solid #FECC00;
     background: #121212;
     text-align: center;
-    width: 20vw;
+    width: 15vw;
 }
 
 .monitor-oficial-container .foto hr{
-    width: 5vw;
-    height: 5vw;
+    width: 8vw;
+    height: 8vw;
     border-radius: 100%;
     border: none;
     background-color: #222222;
@@ -28,34 +28,26 @@
     margin: 1vw 0 0.3vw 0;
 }
 
-.monitor-oficial-container .dados .email{
-    font-size: 12px;
-    font-weight: 300;
-}
-
-.monitor-oficial-container .dados .numero{
-    font-size: 12px;
-    font-weight: 300;
-}
-.monitor-oficial-container .valor{
-    color: #121212;
-    background: #FECC00;
-    padding: 0.5vw 0;
-    width: 80%;
+.monitor-oficial-container .dados .tipo{
     font-weight: 600;
-
-    border-radius: 50px;
-    margin: 2vw 0 1vw 0;
+    color: #FECC00;
 }
 
-.monitor-oficial-container .descricao{
-    display: flex;
-    color: #818181;
-    width: 80%;
-    font-weight: 400;
-    font-size: 12px;
-    padding: 1vw;
+.monitor-oficial-container button{
+    cursor: pointer;
+    color: #121212;
+    background-color: #FECC00;
+    padding: 0.5vw 1vw;
     border-radius: 10px;
-    background: #313131;
-    margin: 0 0 1vw 0;
+    font-weight: 600;
+    margin: 1vw 0;
+    transition: transform 0.2s;
+}
+
+.monitor-oficial-container button:hover{
+    transform: scale(1.1);
+}
+
+.monitor-oficial-container button:active{
+    transform: scale(1);
 }

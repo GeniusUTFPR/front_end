@@ -16,7 +16,6 @@ import {
   LOGIN,
   PERFIL,
   MONITORIA_PALUNO,
-  MONITORIA_OFICIAL,
 } from "./routes";
 
 import {
@@ -36,7 +35,6 @@ import {
   Perfil,
   Monitor,
   MonitoriaPaluno,
-  MonitoriaOficial
 } from "./pages";
 
 export const App = () => {
@@ -50,7 +48,6 @@ export const App = () => {
         <Route exact path={LISTAR_CURSOS} element={<ListarCursos />} />
         <Route exact path={CADASTRAR_AVALIACAO} element={<Avaliacao />} />
         <Route exact path={MONITORIA_PALUNO} element={<MonitoriaPaluno />} />
-        <Route exact path={MONITORIA_OFICIAL} element={<MonitoriaOficial />} />
         <Route
           exact
           path={CADASTRAR_DISCIPLINA}

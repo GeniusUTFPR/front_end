@@ -18,5 +18,4 @@ export { Monitor } from "./Professor/Monitor";
 
 export { CadastrarDisciplina } from "./Disciplina/Cadastrar";
 export { ListarDisciplinas } from "./Disciplina/Listar";
-export { MonitoriaOficial } from "./Disciplina/Sobre/Oficial";
 export { MonitoriaPaluno } from "./Disciplina/Sobre/PAluno";

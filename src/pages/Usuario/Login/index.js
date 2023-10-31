@@ -1,7 +1,7 @@
-import * as React from "react";
-import { useFormik } from "formik";
-import * as Yup from 'yup';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
+import api from '../../../services';
 
 import { Logo } from "../../../components/LogoGenius/LogoGenius";
 
@@ -10,37 +10,30 @@ import "./style.css";
 export const Login = () => {
   const navigate = useNavigate();
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await api.post('token/', {
+        email,
+        password
+      });
+      if (response.status === 200) {
+        const { refresh, access } = response.data;
+        Cookies.set('refreshToken', refresh, { expires: 1, sameSite: 'none', secure: true });
+        Cookies.set('accessToken', access, { expires: 1, sameSite: 'none', secure: true });
+        window.location.href = '/';
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   async function redirecionarCadastro() {
     navigate('/cadastrar');
   }
-
-  async function redirecionarLogin() {
-    navigate('/');
-  }
-
-  const scheme = Yup.object().shape({
-    email: Yup.string()
-      .email()
-      .required('Necessário email'),
-    senha: Yup.string()
-      .min(3, 'A senha deve ter no mínimo 3 caracteres')
-      .required('Necessário senha'),
-  });
-
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      senha: "",
-    },
-    onSubmit: async values => {
-      try {
-        await scheme.validate(values);
-        redirecionarLogin();
-      } catch (error) {
-        alert(error);
-      }
-    },
-  });
 
   return (
     <div className="login-container">
@@ -52,7 +45,7 @@ export const Login = () => {
         <h1>
           Acesse sua <span class="conta">conta</span>
         </h1>
-        <form component="form" onSubmit={formik.handleSubmit}>
+        <form component="form" onSubmit={handleSubmit}>
           <input
             required
             autoFocus
@@ -60,17 +53,17 @@ export const Login = () => {
             placeholder="Email institucional"
             name="email"
             autoComplete="email"
-            onChange={formik.handleChange}
-            value={formik.values.email}
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
           />
           <input
             required
             type="password"
             placeholder="Senha"
-            name="senha"
+            name="password"
             autoComplete="current-password"
-            onChange={formik.handleChange}
-            value={formik.values.senha}
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
           />
           <input type="submit" className="botaoLogin" value="Entrar" />
         </form>

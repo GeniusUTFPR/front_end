@@ -13,7 +13,7 @@ export const CadastrarUsuario = () => {
   const [cursos, setCursos] = useState({});
 
   async function getCursos() {
-    const { data } = await api.get(`curso/`);
+    const { data } = await api.get(`cursos/`);
     setCursos(data);
   }
 
@@ -55,24 +55,24 @@ export const CadastrarUsuario = () => {
       senha: '',
       confirmarSenha: '',
       registro: '',
-      foto_perfil: '',
+      // foto_perfil: '',
       curso: 0,
     },
     onSubmit: async values => {
       try {
-        const { tipo, nome, email, senha, registro, curso, foto_perfil } =
-          values;
+        const { tipo, nome, email, senha, registro, curso } = values;
         await scheme.validate(values);
 
-        await api.post('usuario/', {
+        await api.post('usuarios/', {
           tipo,
           nome,
           email,
-          senha,
+          password: senha,
           registro,
-          foto_perfil: `https://github.com/${foto_perfil}.png`,
+          // foto_perfil: `https://github.com/${foto_perfil}.png`,
           curso: parseInt(curso),
         });
+
 
         alert('Você foi cadastrado com sucesso!');
 
@@ -107,9 +107,8 @@ export const CadastrarUsuario = () => {
             autoComplete="email"
             onChange={formik.handleChange}
             value={formik.values.email}
-            className={`${
-              formik.touched.email && formik.errors.email ? 'error-input' : ''
-            }`}
+            className={`${formik.touched.email && formik.errors.email ? 'error-input' : ''
+              }`}
             required
           />
           <input

@@ -2,6 +2,7 @@ export { PaginaInicial } from "./PaginaInicial";
 export { CadastrarUsuario } from "./Usuario/Cadastrar";
 export { Login } from "./Usuario/Login";
 export { Perfil } from "./Usuario/Perfil";
+export { EditarPerfil } from "./Usuario/Editar";
 
 export { CadastrarCurso } from "./Curso/Cadastrar";
 export { ListarCursos } from "./Curso/Listar";

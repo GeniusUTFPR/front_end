@@ -1,86 +1,99 @@
+import { useEffect, useState } from 'react';
+import Cookies from 'js-cookie';
+import { getUserIdFromToken } from '../../../services/auth';
+import api from '../../../services';
+
 import './style.css';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { Header } from '../../../components/Header';
 import { Footer } from '../../../components/Footer';
-import { useState } from 'react';
 import { ReactComponent as FotoPadrao } from '../../../assets/FotoPerfil.svg';
 
+
 export const Perfil = () => {
-  const [nome, setNome] = useState('');
+  const accessToken = Cookies.get('accessToken');
+  const id = getUserIdFromToken(accessToken);
+  const [informacoesPerfil, setInformacoesPerfil] = useState({});
 
-  const [fotoUrl, setFotoUrl] = useState('');
+  async function getUsuario(id) {
+    const { data } = await api.get(`usuarios/${id}`);
+    setInformacoesPerfil(data);
+  }
 
-  const handleFileUpload = (e) => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-
-    reader.onload = () => {
-      const url = reader.result;
-      setFotoUrl(url);
+  useEffect(() => {
+    async function fetch() {
+      try {
+        getUsuario(id);
+      } catch (error) {
+        console.log(error);
+      }
     }
-
-    if (file) {
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handleButtonClick = () => {
-    document.getElementById('input-file').click();
-  };
+    fetch();
+  }, [id]);
 
   return (
     <div>
       <div className='header'>
         <Header />
       </div>
-      <div className='inicial-container'>
-        <div className='section'>
-          <div className='div-esquerda'>
-            <div className='perfil'>
-              {fotoUrl ? (
-                <img src={fotoUrl} alt="Foto do Perfil" />
-              ) : (
-                <FotoPadrao className='fotoPadrao' />
-              )}
-              <button className="alterarFoto" onClick={handleButtonClick}>
-                Alterar Foto
-              </button>
-              <input
-                type="file"
-                accept="image/*"
-                id="input-file"
-                style={{ display: 'none' }}
-                onChange={handleFileUpload}
-              />
-              <div className='nome'>
-                <p>{nome || 'Campo "nome" vazio.'}</p>
-              </div>
-              <div className='tipo-perfil'>
-                <p>Aluno</p>
-              </div>
+      <div className='perfil-container'>
+        <div className='perfil-card'>
+          <div className='perfil-card-esquerda'>
+            <div className='perfil-card-esquerda-foto'>
+              <FotoPadrao className='perfil-card-esquerda-foto-padrao' />
+            </div>
+            <div className='perfil-card-esquerda-informacoes'>
+              <p>{informacoesPerfil && informacoesPerfil.tipo_usuario ? informacoesPerfil.tipo_usuario.nome : ''}</p>
+            </div>
+            <div className='perfil-card-esquerda-informacoes-sub'>
+              <p>{informacoesPerfil.registro}</p>
             </div>
           </div>
-          <div className='div-direita'>
-            <div className='campo-nome'>
-              <label htmlFor="nome">Nome:</label>
+          <div className='perfil-card-direita'>
+            <div className='perfil-card-direita-campos'>
+              <label for='nome'>Nome:</label>
               <input
-                type="text"
-                id="nome"
-                value={nome}
-                onChange={(e) => setNome(e.target.value)}
+                type='text'
+                id='curso'
+                value={informacoesPerfil.nome}
+                disabled
               />
             </div>
-            <div className='campo-periodo'>
-              <label htmlFor="periodo">Periodo:</label>
-              <input type="text" id="periodo" />
+            <div className='perfil-card-direita-campos'>
+              <label for='email'>E-mail:</label>
+              <input
+                type='text'
+                id='curso'
+                value={informacoesPerfil.email}
+                disabled
+              />
             </div>
-            <div className='campo-curso'>
-              <label htmlFor="curso">Curso:</label>
-              <input type="text" id="curso" />
+            <div className='perfil-card-direita-campos'>
+              <label for='celular'>Celular:</label>
+              <input
+                type='text'
+                id='celular'
+                value={informacoesPerfil.celular || 'Não cadastrado'}
+                disabled
+              />
             </div>
-            <Link to="/">
-              <button>Seja Mentor</button>
-            </Link>
+            <div className='perfil-card-direita-campos'>
+              <label for='curso'>Curso:</label>
+              <input
+                type='text'
+                id='curso'
+                value={informacoesPerfil && informacoesPerfil.curso ? informacoesPerfil.curso.nome : ''}
+                disabled
+              />
+            </div>
+            <div className='perfil-card-direita-botoes'>
+              <Link to='/perfil/editar'>
+                <button>Editar perfil</button>
+              </Link>
+              <Link to='/'>
+                <button>Seja Mentor</button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

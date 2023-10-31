@@ -1,0 +1,90 @@
+.editar-perfil-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 12% 0;
+}
+
+.editar-perfil-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: #121212;
+    border: 0.1rem solid #FECC00;
+    border-radius: 1.5rem;
+    width: 60%;
+    padding: 4rem 0;
+}
+
+.editar-perfil-card h1 {
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 25px;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+.editar-perfil-card .conta {
+    color: #fecc00;
+}
+
+.editar-perfil-card input {
+    width: 43.5%;
+    padding: 1rem 2rem;
+    border-radius: 5rem;
+    margin-bottom: 1rem;
+    border: 3px solid #fecc00;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.editar-perfil-card input:focus {
+    outline: 0;
+}
+
+.editar-perfil-card input::placeholder {
+    font-size: 14px;
+    color: #424242;
+    font-weight: 500;
+}
+
+.editar-perfil-card select {
+    width: 50%;
+    padding: 1rem 2rem;
+    border-radius: 5rem;
+    margin-bottom: 1rem;
+
+    border: 3px solid #fecc00;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.editar-perfil-card select:focus {
+    outline: 0;
+}
+
+.editar-perfil-card option {
+    color: #ffffff;
+}
+
+.editar-perfil-card .botaoCadastrar {
+    width: 30%;
+    margin-top: 2rem;
+    padding: 0.8rem 0;
+    border: 0;
+    border-radius: 1rem;
+    background-color: #FECC00;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    color: #121212;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.botaoCadastrar:hover {
+    transform: scale(1.05);
+}

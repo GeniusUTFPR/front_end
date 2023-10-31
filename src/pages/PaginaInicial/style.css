@@ -9,6 +9,16 @@
   justify-content: space-around;
 }
 
+.inicial-container {
+  font-family: poppins;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  margin: 0 !important;
+  height: 49vw;
+}
+
 .esquerda-container {
   display: flex;
   flex-direction: column;

@@ -89,7 +89,7 @@ button {
   font-weight: 500;
 }
 
-.cadastro-container select {
+.cadastro-container .cadastro-wrapper select {
   width: 48%;
   height: 60px;
   padding: 0 5px;

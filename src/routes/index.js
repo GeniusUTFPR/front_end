@@ -15,6 +15,7 @@ export const CADASTRAR_MONITORIA = "/monitoria/cadastrar";
 export const MINHAS_MONITORIAS = "/monitorias/minhas-monitorias";
 export const EDITAR_MONITORIA = "/monitoria/editar";
 export const LISTAR_MONITORIAS = "/monitoria/listar";
+export const LISTAR_TODAS_MONITORIAS = "/monitoria/listar/todas";
 export const PERFIL_MONITORIA = "/monitoria/perfil";
 export const CADASTRAR_AVALIACAO = "/monitoria/avaliar";
 export const MONITORIA_OFICIAL = "/monitoria/oficial";

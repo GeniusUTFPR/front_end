@@ -25,22 +25,22 @@ export const ListarCursos = () => {
 
   return (
     <div>
-      <div className='header'>
+      <div className="header">
         <Header />
       </div>
-      <div className='curso-container'>
-        <div className='curso-lista'>
+      <div className="curso-container">
+        <div className="curso-lista">
           {cursos.length > 0
             ? cursos.map((item) => (
                 // <option value={item.id}>{item.nome}</option>
                 <Link to={`/disciplina/listar/${item.id}`}>
-                  <div className='curso-card'>
-                    <div className='curso-card-esquerda'>
-                      <div className='curso-card-esquerda-linha'></div>
+                  <div className="curso-card">
+                    <div className="curso-card-esquerda">
+                      <div className="curso-card-esquerda-linha"></div>
                     </div>
-                    <div className='curso-card-direita'>
-                      <p className='curso-card-direita-titulo'>{item.nome}</p>
-                      <p className='curso-card-direita-periodos'>
+                    <div className="curso-card-direita">
+                      <p className="curso-card-direita-titulo">{item.nome}</p>
+                      <p className="curso-card-direita-periodos">
                         &#62; Períodos
                       </p>
                     </div>
@@ -50,9 +50,7 @@ export const ListarCursos = () => {
             : ""}
         </div>
       </div>
-      <div>
-        <Footer />
-      </div>
+      <div></div>
     </div>
   );
 };

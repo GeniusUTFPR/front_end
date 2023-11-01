@@ -5,3 +5,4 @@ export { MinhasMonitorias } from "./MinhasMonitorias";
 export { MonitorOficial } from "./MonitorOficial";
 export { MonitorPaluno } from "./MonitorPaluno";
 export { MonitorExterno } from "./MonitorExterno";
+export { PalunoForm } from "./PalunoForm";

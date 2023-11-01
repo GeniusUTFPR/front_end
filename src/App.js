@@ -18,6 +18,9 @@ import {
   MONITORIA_PALUNO,
   EDITAR_PERFIL,
   SER_MONITOR,
+  CADASTRAR_PALUNO,
+  LISTAR_PALUNO,
+  EDITAR_PALUNO,
 } from "./routes";
 
 import {
@@ -39,6 +42,9 @@ import {
   Monitor,
   SerMonitor,
   MonitoriaPaluno,
+  CadastrarPaluno,
+  ListarPaluno,
+  EditarPaluno,
 } from "./pages";
 
 import isAuthenticated from "./services/auth";
@@ -51,11 +57,15 @@ export const App = () => {
           <Route path={PAGINA_INICIAL} element={<PaginaInicial />} />
           <Route path={PERFIL} element={<Perfil />} />
           <Route path={EDITAR_PERFIL} element={<EditarPerfil />} />
-          <Route path={SER_MONITOR} element={<SerMonitor />}/>
+          <Route path={SER_MONITOR} element={<SerMonitor />} />
           <Route path={CADASTRAR_CURSO} element={<CadastrarCurso />} />
           <Route path={LISTAR_CURSOS} element={<ListarCursos />} />
           <Route path={CADASTRAR_AVALIACAO} element={<Avaliacao />} />
           <Route path={MONITORIA_PALUNO} element={<MonitoriaPaluno />} />
+
+          <Route path={CADASTRAR_PALUNO} element={<CadastrarPaluno />} />
+          <Route path={LISTAR_PALUNO} element={<ListarPaluno />} />
+          <Route path={EDITAR_PALUNO} element={<EditarPaluno />} />
 
           <Route
             path={CADASTRAR_DISCIPLINA}

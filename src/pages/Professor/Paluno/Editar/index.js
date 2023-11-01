@@ -1,1 +1,3 @@
-export const EditarPaluno = () => {};
+export const EditarPaluno = () => {
+  return <div></div>;
+};

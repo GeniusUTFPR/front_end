@@ -1,16 +1,16 @@
-import './style.css';
+import "./style.css";
 
-import React from 'react';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import { useEffect, useState } from 'react';
-import { api } from '../../services';
+import React from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { useEffect, useState } from "react";
+import { api } from "../../services";
 
 const scheme = Yup.object().shape({
   curso_id: Yup.string().required('É necessário especificar o curso.'),
   disciplina: Yup.string().required('É necessário especificar a disciplina.'),
   valor_por_hora: Yup.number().required(
-    'É necessário inserir o valor/hora da monitoria'
+    "É necessário inserir o valor/hora da monitoria"
   ),
   horarios: Yup.string().required('É necessário especificar os horários.'),
   descricao: Yup.string(),
@@ -67,6 +67,7 @@ export const MonitoriaForm = ({
               type='text'
               placeholder='Curso'
               name='curso_id'
+
               onChange={formik.handleChange}
               value={formik.values.curso_id}
             >

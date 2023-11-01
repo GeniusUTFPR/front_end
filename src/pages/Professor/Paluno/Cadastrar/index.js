@@ -1,74 +1,87 @@
-import "./style.css";
+import Cookies from "js-cookie";
+import { getUserIdFromToken } from "../../../../services/auth";
+import { useNavigate } from "react-router-dom";
 
-import { useFormik } from "formik";
-import * as Yup from "yup";
+import { PalunoForm } from "../../../../components/PalunoForm";
+import api from "../../../../services";
 
 import Header from "../../../../components/Header";
 import Footer from "../../../../components/Footer";
 
-export const CadastrarPaluno = () => {
-  const scheme = Yup.object().shape({
-    horario: Yup.string().required("Necessário preencher o horário do Paluno"),
-    descricao: Yup.string().required(
-      "Necessário preencher a descrição do Paluno"
-    ),
-  });
+import { MINHAS_MONITORIAS } from "../../../../routes";
 
-  const formik = useFormik({
-    initialValues: {
-      horario: "",
-      descricao: "",
-    },
-  });
+export const CadastrarPaluno = () => {
+  const navigate = useNavigate();
+  const accessToken = Cookies.get("accessToken");
+  const id = getUserIdFromToken(accessToken);
+
+  const initialValues = {
+    curso_id: 1,
+    tipo_monitoria: 3,
+    horarios: "",
+    descricao: "",
+    disciplina: 0,
+  };
+
+  const handleSubmit = async (values) => {
+    try {
+      await api.post("monitorias/", {
+        tipo_monitoria: 3,
+        usuario: id,
+        horarios: values.horarios,
+        descricao: values.descricao,
+        disciplina: values.disciplina,
+      });
+
+      navigate(MINHAS_MONITORIAS);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
-    <div className="cadastro-paluno-container">
+    <div>
       <div className="header">
         <Header />
       </div>
-      <div className="cadastro-paluno-disciplina">
-        <div className="cadastro-paluno-wrapper">
-          <h1>
-            Olá professor! Cadastre o <span className="paluno">PAluno</span> da
-            sua disciplina
-          </h1>
-          <form component="form" onSubmit={formik.handleSubmit}>
-            <select
-              id="select-disciplina"
-              type="text"
-              placeholder="Escolha a disciplina"
-              name="disciplina"
-              autoComplete="disciplina"
-              onChange={formik.handleChange}
-              value={formik.values.disciplina}
-            >
-              <option value={0} defaultValue>
-                Selecione a disciplina
-              </option>
-            </select>
-            <input
-              type="text"
-              placeholder="Horário"
-              name="horario"
-              autoComplete="horario"
-              onChange={formik.handleChange}
-              value={formik.values.horario}
-              autoFocus
-              required
+      <div style={{ margin: "12% 0" }}>
+        <div
+          className="monitoria-form-container"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "column",
+          }}
+        >
+          <div
+            className="monitoria-form-wrapper"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "column",
+              color: "#FFFFFF",
+
+              backgroundColor: "#121212",
+              borderRadius: "2rem",
+              padding: "2rem",
+              width: "60%",
+            }}
+          >
+            <PalunoForm
+              title1="Crie um "
+              title2="PAluno"
+              initialValues={initialValues}
+              onCancel={() => {
+                navigate(MINHAS_MONITORIAS);
+              }}
+              onSubmit={handleSubmit}
             />
-            <input
-              type="text"
-              placeholder="Descrição"
-              name="descricao"
-              autoComplete="descricao"
-              onChange={formik.handleChange}
-              value={formik.values.descricao}
-              autoFocus
-              required
-            />
-            <input type="submit" className="botaoCadastrar" value="Cadastrar" />
-          </form>
+          </div>
         </div>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

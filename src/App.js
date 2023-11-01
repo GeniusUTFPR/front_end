@@ -9,7 +9,6 @@ import {
   LISTAR_DISCIPLINAS,
   CADASTRAR_MONITORIA,
   EDITAR_MONITORIA,
-  LISTAR_MONITORIAS,
   LISTAR_TODAS_MONITORIAS,
   PERFIL_MONITORIA,
   CADASTRAR_MONITOR,
@@ -21,6 +20,7 @@ import {
   CADASTRAR_PALUNO,
   LISTAR_PALUNO,
   EDITAR_PALUNO,
+  MINHAS_MONITORIAS,
 } from "./routes";
 
 import {
@@ -34,7 +34,6 @@ import {
   ListarTodasMonitorias,
   CadastrarMonitoria,
   EditarMonitoria,
-  ListarMonitorias,
   PerfilMonitoria,
   ListarCursos,
   Perfil,
@@ -45,6 +44,7 @@ import {
   CadastrarPaluno,
   ListarPaluno,
   EditarPaluno,
+  MinhasMonitorias,
 } from "./pages";
 
 import isAuthenticated from "./services/auth";
@@ -79,8 +79,9 @@ export const App = () => {
           />
           <Route path={CADASTRAR_MONITORIA} element={<CadastrarMonitoria />} />
           <Route path={CADASTRAR_MONITOR} element={<Monitor />} />
+          <Route path={MINHAS_MONITORIAS} element={<MinhasMonitorias />} />
           <Route path={EDITAR_MONITORIA} element={<EditarMonitoria />} />
-          <Route path={LISTAR_MONITORIAS} element={<ListarMonitorias />} />
+          {/* <Route path={LISTAR_MONITORIAS} element={<ListarMonitorias />} /> */}
           <Route path={PERFIL_MONITORIA} element={<PerfilMonitoria />} />
         </Routes>
       ) : (

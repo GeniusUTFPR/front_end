@@ -2,6 +2,7 @@
 
 Bem-vindo ao repositório do **Genius**, um sistema de monitorias para a matéria de Projeto Integrador da Universidade Tecnológica Federal do Paraná (UTFPR)! Este projeto foi desenvolvido por nossa equipe de desenvolvedores front-end:
 
+- **Eduardo Riki**
 - **Rafaela Tieri**
 - **Walancy Ferreira**
 

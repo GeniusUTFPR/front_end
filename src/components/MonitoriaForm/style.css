@@ -7,7 +7,7 @@
 }
 
 .monitoria-form-wrapper .monitoria {
-  color: #fecc00;
+  color: #FECC00;
 }
 
 .monitoria-form-container form {
@@ -40,13 +40,12 @@
   margin: 0.2rem;
 }
 
-.monitoria-form-form input,
-textarea {
+.monitoria-form-form input, textarea {
   width: 100%;
   padding: 0.7rem 1rem;
   color: #ffffff;
   border-radius: 2rem;
-  border: 2px solid #fecc00;
+  border: 2px solid #FECC00;
   background-color: #121212;
   box-sizing: border-box;
 }
@@ -57,7 +56,7 @@ textarea {
 
   color: #ffffff;
   border-radius: 100px;
-  border: 2px solid #fecc00;
+  border: 2px solid #FECC00;
   background-color: #121212;
   box-sizing: border-box;
 }
@@ -120,7 +119,7 @@ textarea {
   font-size: 1rem;
   border: 0;
   border-radius: 0.5rem;
-  background-color: #fecc00;
+  background-color: #FECC00;
   font-weight: bold;
   color: #121212;
   cursor: pointer;
@@ -166,8 +165,7 @@ textarea {
     align-items: center;
   }
 
-  .monitoria-form-botao-confirmar,
-  .monitoria-form-botao-cancelar {
+  .monitoria-form-botao-confirmar, .monitoria-form-botao-cancelar {
     width: 100%;
   }
 }

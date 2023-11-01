@@ -15,6 +15,7 @@ import {
   LOGIN,
   PERFIL,
   EDITAR_PERFIL,
+  SER_MONITOR,
 } from "./routes";
 
 import {
@@ -33,6 +34,7 @@ import {
   Perfil,
   EditarPerfil,
   Monitor,
+  SerMonitor,
 } from "./pages";
 
 import isAuthenticated from "./services/auth";
@@ -46,6 +48,7 @@ export const App = () => {
           <Route path={PAGINA_INICIAL} element={<PaginaInicial />} />
           <Route path={PERFIL} element={<Perfil />} />
           <Route path={EDITAR_PERFIL} element={<EditarPerfil />} />
+          <Route path={SER_MONITOR} element={<SerMonitor />}/>
           <Route path={CADASTRAR_CURSO} element={<CadastrarCurso />} />
           <Route path={LISTAR_CURSOS} element={<ListarCursos />} />
           <Route path={CADASTRAR_AVALIACAO} element={<Avaliacao />} />

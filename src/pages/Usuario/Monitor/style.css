@@ -1,0 +1,15 @@
+.editar-perfil-monitor {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5rem;
+    text-align: justify;
+    color: #FFFFFF;   
+}
+
+.editar-perfil-monitor p {
+    margin: 0.5rem 0;
+}
+
+.editar-perfil-monitor b {
+    color: #FECC00;
+}

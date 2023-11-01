@@ -1,79 +1,95 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins,wght@1,300&display=swap");
 
-* {
-  text-decoration: none;
-}
-
-body {
-  background-color: #0c0c0c;
-}
-
-.main-cursos {
+.curso-container {
   display: flex;
   justify-content: center;
-  margin-top: 10rem;
+  width: 100%;
+  margin: 12% 0;
 }
 
-.container-cursos {
-  display: flex;
-  justify-content: center;
-  width: 120vh;
-  flex-wrap: wrap;
-  margin-top: 3vh;
-}
-
-.quadro-curso {
+.curso-lista {
   display: flex;
   align-items: center;
-  background-color: #121212;
+  justify-content: space-evenly;
+  text-align: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.curso-lista a {
+  width: 40%;
+}
+
+.curso-card {
   display: flex;
-  padding: 10px;
-  border-radius: 1rem;
-  width: 350px;
-  height: 100px;
-  margin: 0.5rem 2rem;
-}
-
-.cursor-block {
-  cursor: not-allowed;
-}
-
-.cursor-pointer {
+  background-color: #121212;
+  border-radius: 1.5rem;
+  width: 100%;
+  height: 6rem;
+  padding: 1rem 0;
+  border: 1px solid #121212;
+  margin-bottom: 2rem;
   cursor: pointer;
 }
 
-.quadro-esquerda {
+.curso-card-esquerda {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: right;
-  background-color: #FECC00;
-  width: 70px;
-  height: 70px;
-  border-radius: 10px;
-  margin-right: 2rem;
-  margin-left: 20px;
+  justify-content: flex-end;
+  width: 10%;
 }
 
-.quadro-direita {
+.curso-card-esquerda-linha {
+  background-color: #FECC00;
+  width: 10%;
+  border-radius: 2rem;
+}
+
+.curso-card-direita {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #FFFFFF;
+  text-align: left;
+  width: 80%;
+  margin: 1rem 0 1rem 1rem;
 }
 
-@media screen and (max-width: 440px) {
-  .quadro-curso {
-    width: 250px;
-    height: 75px;
-    align-items: center;
+.curso-card-direita-titulo {
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.curso-card-direita-periodos {
+  color: #3F3F3F;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.curso-card:hover {
+  border: 1px solid #FECC00;
+}
+
+@media (max-width: 1024px) {
+  .curso-lista {
+    flex-direction: column;
   }
 
-  .quadro-esquerda {
-    display: none;
+  .curso-lista a {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .curso-container {
+    margin: 20% 0;
   }
   
-  .footer {
-    display: none;
+  .curso-lista {
+    width: 80%;
+  }
+
+  .curso-lista a {
+    width: 100%;
   }
 }

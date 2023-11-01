@@ -1,29 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins,wght@1,300&display=swap");
-
-* {
-  text-decoration: none;
-}
-
-body {
-  background-color: #0c0c0c;
-}
-
-.listar-monitoria-container .monitoria-wrapper {
+.minha-monitoria-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  background: #121212;
   color: #ffffff;
-
-  margin-bottom: 15px;
-
-  background-color: #121212;
-  border-radius: 20px;
-  padding: 10px;
-  width: 20%;
 }
 
-.monitoria-wrapper .botao-wrapper {
+.minha-monitoria-titulo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fecc00;
+}
+
+.minha-monitoria-horario {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.minha-monitoria-horario {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.minha-monitoria-valor {
+  display: flex;
+  flex-direction: column;
+}
+
+.minha-monitoria-botao {
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -33,7 +47,18 @@ body {
   width: 90%;
 }
 
-.monitoria-wrapper .botaoEditar {
+.minha-monitoria-wrapper p {
+  text-align: justify;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.minha-monitoria-wrapper h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.minha-monitoria-botao-editar {
   display: flex;
   width: 70px;
   justify-content: center;
@@ -49,7 +74,7 @@ body {
   font-weight: bold;
 }
 
-.monitoria-wrapper .botaoDeletar {
+.minha-monitoria-botao-deletar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,46 +86,4 @@ body {
   color: #0c0c0c;
   cursor: pointer;
   font-weight: bold;
-}
-
-.monitoria-wrapper .title-disciplina {
-  text-decoration: none;
-  text-align: center;
-  font-size: 25px;
-  font-weight: 600;
-  color: #fecc00;
-}
-
-.monitoria-wrapper .title-horario {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  text-align: center;
-  margin-bottom: 5px;
-  font-size: 15px;
-  color: #ffffff;
-}
-
-.monitoria-wrapper p {
-  text-decoration: none;
-  text-align: justify;
-  font-size: 15px;
-  color: #ffffff;
-}
-
-.monitoria-wrapper h2 {
-  text-decoration: none;
-  text-align: center;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.monitoria-wrapper .title-valor {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 15px;
-  color: #ffffff;
 }

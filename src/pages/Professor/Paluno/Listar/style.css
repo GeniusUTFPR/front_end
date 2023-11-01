@@ -6,11 +6,6 @@
   margin: 12% 0;
 }
 
-.listar-meu-paluno-container p {
-  color: #ffffff;
-  margin: 3rem;
-}
-
 .listar-meu-paluno-titulo {
   display: flex;
   flex-direction: row;
@@ -47,4 +42,128 @@
 
 .listar-meu-paluno-button button:hover {
   transform: scale(1.05);
+}
+
+.listar-meu-paluno-lista {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.meu-paluno-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 350px;
+  height: 400px;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background: #121212;
+  color: #ffffff;
+  border: 1px solid #121212;
+}
+
+.meu-paluno-wrapper:hover {
+  border: 1px solid #fecc00;
+}
+
+.meu-paluno-titulo {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fecc00;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+}
+
+.meu-paluno-horario {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.meu-paluno-horario {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.meu-paluno-horario p {
+  background-color: #303030;
+  border-radius: 0.5rem;
+  height: 7rem;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  width: 95%; /* Defina o valor desejado, como 300px */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adiciona reticências (...) ao texto se ele estiver cortado */
+  white-space: wrap;
+}
+
+.meu-paluno-botao {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  color: #ffffff;
+
+  background-color: #121212;
+  width: 90%;
+}
+
+.meu-paluno-wrapper p {
+  text-align: justify;
+}
+
+.meu-paluno-wrapper h1 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.meu-paluno-botao-editar {
+  display: flex;
+  width: 70px;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  margin-right: 20px;
+
+  background-color: #fecc00;
+  border-radius: 10px;
+
+  color: #0c0c0c;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.meu-paluno-botao-deletar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 40px;
+  background-color: #fecc00;
+  border-radius: 10px;
+
+  color: #0c0c0c;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.listar-meu-paluno-nenhuma {
+  margin: 3rem;
+  color: #ffffff;
 }

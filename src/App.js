@@ -9,18 +9,18 @@ import {
   LISTAR_DISCIPLINAS,
   CADASTRAR_MONITORIA,
   EDITAR_MONITORIA,
-  LISTAR_TODAS_MONITORIAS,
-  PERFIL_MONITORIA,
   CADASTRAR_MONITOR,
   LOGIN,
   PERFIL,
-  MONITORIA_PALUNO,
   EDITAR_PERFIL,
   SER_MONITOR,
   CADASTRAR_PALUNO,
   LISTAR_PALUNO,
   EDITAR_PALUNO,
   MINHAS_MONITORIAS,
+  LISTAR_MONITORIA_PALUNO,
+  EXIBIR_MONITORIA,
+  LISTAR_MONITORIAS_EXTERNAS,
 } from "./routes";
 
 import {
@@ -31,10 +31,8 @@ import {
   Avaliacao,
   CadastrarDisciplina,
   ListarDisciplinas,
-  ListarTodasMonitorias,
   CadastrarMonitoria,
   EditarMonitoria,
-  PerfilMonitoria,
   ListarCursos,
   Perfil,
   EditarPerfil,
@@ -45,6 +43,8 @@ import {
   ListarPaluno,
   EditarPaluno,
   MinhasMonitorias,
+  ExibirMonitoria,
+  ListarMonitoriasExternas,
 } from "./pages";
 
 import isAuthenticated from "./services/auth";
@@ -58,31 +58,30 @@ export const App = () => {
           <Route path={PERFIL} element={<Perfil />} />
           <Route path={EDITAR_PERFIL} element={<EditarPerfil />} />
           <Route path={SER_MONITOR} element={<SerMonitor />} />
+
           <Route path={CADASTRAR_CURSO} element={<CadastrarCurso />} />
           <Route path={LISTAR_CURSOS} element={<ListarCursos />} />
-          <Route path={CADASTRAR_AVALIACAO} element={<Avaliacao />} />
-          <Route path={MONITORIA_PALUNO} element={<MonitoriaPaluno />} />
-
-          <Route path={CADASTRAR_PALUNO} element={<CadastrarPaluno />} />
-          <Route path={LISTAR_PALUNO} element={<ListarPaluno />} />
-          <Route path={EDITAR_PALUNO} element={<EditarPaluno />} />
 
           <Route
             path={CADASTRAR_DISCIPLINA}
             element={<CadastrarDisciplina />}
           />
           <Route path={LISTAR_DISCIPLINAS} element={<ListarDisciplinas />} />
-          <Route
-            exact
-            path={LISTAR_TODAS_MONITORIAS}
-            element={<ListarTodasMonitorias />}
-          />
+
           <Route path={CADASTRAR_MONITORIA} element={<CadastrarMonitoria />} />
-          <Route path={CADASTRAR_MONITOR} element={<Monitor />} />
           <Route path={MINHAS_MONITORIAS} element={<MinhasMonitorias />} />
           <Route path={EDITAR_MONITORIA} element={<EditarMonitoria />} />
-          {/* <Route path={LISTAR_MONITORIAS} element={<ListarMonitorias />} /> */}
-          <Route path={PERFIL_MONITORIA} element={<PerfilMonitoria />} />
+
+          <Route path={LISTAR_MONITORIA_PALUNO} element={<MonitoriaPaluno />} />
+          <Route path={EXIBIR_MONITORIA} element={<ExibirMonitoria />} />
+          <Route path={LISTAR_MONITORIAS_EXTERNAS} element={<ListarMonitoriasExternas />} />
+          <Route path={CADASTRAR_AVALIACAO} element={<Avaliacao />} />
+
+
+          <Route path={CADASTRAR_PALUNO} element={<CadastrarPaluno />} />
+          <Route path={LISTAR_PALUNO} element={<ListarPaluno />} />
+          <Route path={EDITAR_PALUNO} element={<EditarPaluno />} />
+          <Route path={CADASTRAR_MONITOR} element={<Monitor />} />
         </Routes>
       ) : (
         <Routes>

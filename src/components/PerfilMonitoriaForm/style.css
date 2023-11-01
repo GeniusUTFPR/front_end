@@ -11,7 +11,8 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 124px;
+  margin: 12% 0;
+  width: 100%;
 }
 
 .perfil-monitoria-container .perfil-monitoria-wrapper {
@@ -26,12 +27,12 @@ body {
   border: 2px solid #fecc00;
 
   padding: 50px;
-  width: 500px;
+  width: 30%;
 }
 
 .perfil-monitoria-wrapper .circulo {
   border-radius: 100%;
-  margin-bottom: 3px;
+  margin-bottom: 1rem;
   width: 7rem;
   height: 7rem;
   padding: 0.5vw;
@@ -84,6 +85,8 @@ body {
 }
 
 .perfil-monitoria-wrapper h2 {
+  margin-top: 1rem;
+  margin-bottom: 0;
   text-decoration: none;
   font-size: 20px;
   font-weight: 600;
@@ -91,15 +94,27 @@ body {
 }
 
 .perfil-monitoria-wrapper .horarios {
-  text-decoration: none;
-  text-align: center;
-  font-size: 15px;
+  background-color: #303030;
+  border-radius: 0.5rem;
+  height: 7rem;
+  padding: 1rem;
+  font-size: 0.9rem;
+  width: 95%; /* Defina o valor desejado, como 300px */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adiciona reticências (...) ao texto se ele estiver cortado */
+  white-space: wrap;
 }
 
 .perfil-monitoria-wrapper .descricao {
-  text-decoration: none;
-  text-align: justify;
-  font-size: 15px;
+  background-color: #303030;
+  border-radius: 0.5rem;
+  height: 7rem;
+  padding: 1rem;
+  font-size: 0.9rem;
+  width: 95%; /* Defina o valor desejado, como 300px */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adiciona reticências (...) ao texto se ele estiver cortado */
+  white-space: wrap;
 }
 
 .perfil-monitoria-container .botaoAvaliar {
@@ -132,22 +147,22 @@ body {
 }
 
 .perfil-monitoria-container button {
-  margin-top: 30px;
-  width: 200px;
-  height: 40px;
-
-  font-size: 19px;
+  margin-top: 2rem;
+  padding: 1rem 4rem;
+  font-size: 1.2rem;
   font-weight: bold;
-
-  border-radius: 30px;
+  border-radius: 1rem;
   background-color: #fecc00;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: #121212;
   cursor: pointer;
+  transition: calc(0.2s);
+}
+
+.perfil-monitoria-container button:hover {
+  transform: scale(1.05);
 }
 
 #descricaoperfil-monitoria {

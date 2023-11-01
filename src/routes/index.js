@@ -15,7 +15,7 @@ export const DISCIPLINA = "/disciplina/:disciplina_id";
 export const CADASTRAR_MONITOR = "/disciplina/monitor";
 
 export const CADASTRAR_MONITORIA = "/monitoria/cadastrar";
-export const MINHAS_MONITORIAS = "/monitorias/minhas-monitorias";
+export const MINHAS_MONITORIAS = "/monitoria/listar";
 export const EDITAR_MONITORIA = "/monitoria/editar";
 export const LISTAR_MONITORIAS = "/monitoria/listar";
 export const LISTAR_TODAS_MONITORIAS = "/monitoria/listar/todas";

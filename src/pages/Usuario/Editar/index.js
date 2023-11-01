@@ -46,7 +46,7 @@ export const EditarPerfil = () => {
             await api.patch(`/usuarios/${id}/`, {
                 nome: informacoesPerfil.nome,
                 celular: informacoesPerfil.celular,
-                curso: informacoesPerfil.curso.id,
+                curso: informacoesPerfil.curso,
             });
 
             alert('Perfil editado com sucesso!');

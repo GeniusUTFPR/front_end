@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 import { getUserIdFromToken } from '../../../services/auth';
 
@@ -13,24 +12,7 @@ import './style.css';
 export const SerMonitor = () => {
     const accessToken = Cookies.get('accessToken');
     const id = getUserIdFromToken(accessToken);
-    const [informacoesPerfil, setInformacoesPerfil] = useState({});
     const navigate = useNavigate();
-
-    async function getUsuario(id) {
-        const { data } = await api.get(`usuarios/${id}`);
-        setInformacoesPerfil(data);
-    }
-
-    useEffect(() => {
-        async function fetch() {
-            try {
-                getUsuario(id);
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        fetch();
-    }, [id]);
 
     const handleChange = async (e) => {
         e.preventDefault(); // Evite que o formulário seja enviado por padrão

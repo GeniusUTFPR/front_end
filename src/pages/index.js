@@ -12,7 +12,7 @@ export { Avaliacao } from "./Avaliacao/Cadastrar";
 
 export { CadastrarMonitoria } from "./Monitoria/Cadastrar";
 export { EditarMonitoria } from "./Monitoria/Editar";
-export { ListarMonitorias } from "./Monitoria/Listar";
+export { MinhasMonitorias } from "./Monitoria/Listar";
 export { ListarTodasMonitorias } from "./Monitoria/Listar/Todas";
 export { PerfilMonitoria } from "./Monitoria/PerfilMonitoria";
 

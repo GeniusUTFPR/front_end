@@ -1,37 +1,52 @@
+import React, { useEffect, useState } from 'react';
 import { MonitoriaForm } from '../../../components/MonitoriaForm';
 import { api } from '../../../services';
 import { Modal } from '@mui/material';
 
 export const EditarMonitoria = ({ open, onClose, monitoria }) => {
+  const [cursoId, setCursoId] = useState({});
+  const [disciplinaId, setDisciplinaId] = useState({});
+  const [dadosCarregados, setDadosCarregados] = useState(false);
+
+  useEffect(() => {
+    if (monitoria) {
+      async function fetchCursoId() {
+        try {
+          const disciplina_id = monitoria.disciplina && monitoria.disciplina.id;
+
+          if (disciplina_id) {
+            const response = await api.get(`/disciplinas/${disciplina_id}`);
+            const curso_id_disciplina = response.data.curso && response.data.curso.id;
+
+            setCursoId(curso_id_disciplina);
+            setDisciplinaId(disciplina_id);
+            setDadosCarregados(true);
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      fetchCursoId();
+    }
+  }, [monitoria]);
 
   const initialValues = {
-    monitoriaTipo: 1,
-    monitoriaDisciplinaID: monitoria.disciplina_id,
-    monitoriaValorPorHora: monitoria.valor_por_hora,
-    monitoriaSegunda: monitoria.segunda,
-    monitoriaTerca: monitoria.terca,
-    monitoriaQuarta: monitoria.quarta,
-    monitoriaQuinta: monitoria.quinta,
-    monitoriaSexta: monitoria.sexta,
-    monitoriaSabado: monitoria.sabado,
-    monitoriaDescricao: monitoria.descricao,
+    curso_id: cursoId,
+    disciplina: disciplinaId,
+    valor_por_hora: monitoria.valor_por_hora,
+    horarios: monitoria.horarios,
+    descricao: monitoria.descricao,
   };
 
-  const handleEdit = async values => {
-    const { id } = monitoria;
-
+  const handleEdit = async (values) => {
+    const id = monitoria.id;
     try {
-      await api.patch(`/monitoria/${id}`, {
-        tipo: parseInt(values.monitoriaTipo),
-        disciplina_id: parseInt(values.monitoriaDisciplinaID),
-        valor_por_hora: parseInt(values.monitoriaValorPorHora),
-        segunda: values.monitoriaSegunda,
-        terca: values.monitoriaTerca,
-        quarta: values.monitoriaQuarta,
-        quinta: values.monitoriaQuinta,
-        sexta: values.monitoriaSexta,
-        sabado: values.monitoriaSabado,
-        descricao: values.monitoriaDescricao,
+      await api.patch(`monitorias/${id}/`, {
+        disciplina: parseInt(values.disciplina),
+        valor_por_hora: parseInt(values.valor_por_hora),
+        horarios: values.horarios,
+        descricao: values.descricao,
       });
       onClose();
       window.location.reload();
@@ -58,13 +73,39 @@ export const EditarMonitoria = ({ open, onClose, monitoria }) => {
       }}
       style={{ border: '100vh solid rgba(0, 0, 0, 0.8)' }}
     >
-      <MonitoriaForm
-        title1="Edite sua "
-        title2="monitoria"
-        initialValues={initialValues}
-        onCancel={onClose}
-        onSubmit={handleEdit}
-      />
+      {dadosCarregados ? (
+        <div className='monitoria-form-container'
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'column',
+          }}>
+          <div className='monitoria-form-wrapper'
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexDirection: 'column',
+              color: '#FFFFFF',
+
+              backgroundColor: '#121212',
+              borderRadius: '2rem',
+              padding: '2rem',
+              width: '250%'
+            }}
+          >
+            <MonitoriaForm
+              title1="Edite sua "
+              title2="monitoria"
+              initialValues={initialValues}
+              onCancel={onClose}
+              onSubmit={handleEdit}
+            />
+          </div>
+        </div>
+      ) : (
+        <p>Carregando...</p>
+      )}
     </Modal>
   );
 };

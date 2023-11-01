@@ -87,12 +87,19 @@ export const Perfil = () => {
               />
             </div>
             <div className='perfil-card-direita-botoes'>
-              <Link to='/perfil/editar'>
-                <button>Editar perfil</button>
-              </Link>
-              <Link to='/'>
-                <button>Seja Mentor</button>
-              </Link>
+                <Link to='/perfil/editar'>
+                  <button>Editar perfil</button>
+                </Link>
+                {informacoesPerfil && informacoesPerfil.tipo_usuario && informacoesPerfil.tipo_usuario.id === 1 && (
+                <Link to='/perfil/eula'>
+                  <button>Seja monitor</button>
+                </Link>
+              )}
+              {informacoesPerfil && informacoesPerfil.tipo_usuario && informacoesPerfil.tipo_usuario.id > 1 && (
+                <Link to='/monitoria/listar'>
+                  <button>Monitorias</button>
+                </Link>
+              )}
             </div>
           </div>
         </div>

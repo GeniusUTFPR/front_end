@@ -11,7 +11,7 @@ export const ListarCursos = () => {
   const [cursos, setCursos] = useState({});
 
   async function getCursos() {
-    const { data } = await api.get(`curso/`);
+    const { data } = await api.get(`cursos/`);
     setCursos(data);
   }
 
@@ -25,20 +25,22 @@ export const ListarCursos = () => {
 
   return (
     <div>
-      <div className="header">
+      <div className='header'>
         <Header />
       </div>
-      <div className="main-cursos">
-        <div className="container-cursos">
+      <div className='curso-container'>
+        <div className='curso-lista'>
           {cursos.length > 0
             ? cursos.map((item) => (
                 // <option value={item.id}>{item.nome}</option>
-                <Link to="/disciplina/listar">
-                  <div className="quadro-curso">
-                    <div className="quadro-esquerda"></div>
-                    <div className="quadro-direita">
-                      <p style={{ margin: "0" }}>{item.nome}</p>
-                      <p style={{ fontWeight: "bold", color: "#3F3F3F" }}>
+                <Link to={`/disciplina/listar/${item.id}`}>
+                  <div className='curso-card'>
+                    <div className='curso-card-esquerda'>
+                      <div className='curso-card-esquerda-linha'></div>
+                    </div>
+                    <div className='curso-card-direita'>
+                      <p className='curso-card-direita-titulo'>{item.nome}</p>
+                      <p className='curso-card-direita-periodos'>
                         &#62; Períodos
                       </p>
                     </div>
@@ -48,13 +50,9 @@ export const ListarCursos = () => {
             : ""}
         </div>
       </div>
-      <div className="listarDisciplina-botao">
-        <Link to="/curso/cadastrar">
-          <button className="botaoCadastrar">Cadastrar novo curso</button>
-        </Link>
+      <div>
+        <Footer />
       </div>
-
-      
     </div>
   );
 };

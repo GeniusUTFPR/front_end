@@ -1,6 +1,5 @@
 import './style.css';
 
-import LaptopIcon from '@mui/icons-material/Laptop';
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
@@ -10,112 +9,65 @@ import Footer from '../../../components/Footer';
 
 export const ListarDisciplinas = () => {
   const [informacoesDisciplinas, setInformacoesDisciplinas] = useState({});
-  const { periodo } = useParams();
+  const { curso_id } = useParams();
 
-  async function getDisciplinas(curso) {
-    const { data } = await api.get(`disciplina/`);
+  async function getDisciplinas(curso_id) {
+    const { data } = await api.get(`disciplinas/?curso__id=${curso_id}`);
     setInformacoesDisciplinas(data);
   }
 
   useEffect(() => {
     async function fetchThesis() {
       try {
-        await getDisciplinas(periodo);
-      } catch (error) {}
+        await getDisciplinas(curso_id);
+      } catch (error) { }
     }
     fetchThesis();
-  }, [periodo]);
+  }, [curso_id]);
 
   return (
     <div>
-      <div className="header">
+      <div className='header'>
         <Header />
       </div>
-      <div
-        style={{
-          display: 'flex',
-          gap: '30px',
-          margin: '20px',
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginTop: '10rem',
-        }}
-      >
-        <button
-          class="div-externa"
+      <div className='listar-disciplinas-container'>
+        <div className='listar-disciplinas-header'>
+          <div className='listar-disciplinas-header-esquerda'>
+            <div className='listar-disciplinas-header-esquerda-linha'> </div>
+          </div>
+          <div className='listar-disciplinas-header-direita'>
+            <p>Ciências da Computação</p>
+          </div>
+        </div>
+        <div
           style={{
-            fontFamily: 'Arial',
-            border: 'none',
-            background: '#121212',
-            cursor: 'pointer',
+            display: 'flex',
+            gap: '30px',
+            margin: '20px',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginTop: '10px',
           }}
         >
-          <div
-            class="div-interna"
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              textAlign: 'right',
-            }}
-          >
-            <LaptopIcon fontSize="large" style={{ color: '#121212' }} />
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'flex-start',
-            }}
-          >
-            <p style={{ margin: '0' }}>Ciências da Computação</p>
-            <p style={{ fontWeight: 'bold', color: '#3F3F3F' }}>
-              &#62; {periodo}º Período
-            </p>
-          </div>
-        </button>
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          gap: '30px',
-          margin: '20px',
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginTop: '10px',
-        }}
-      >
-        <div class="lista-botoes">
-          {informacoesDisciplinas.length > 0
-            ? informacoesDisciplinas.map(item => (
+          <div class='listar-disciplinas-lista'>
+            {informacoesDisciplinas.length > 0
+              ? informacoesDisciplinas.map(item => (
                 <Link to={`/disciplina/${item.id}`}>
-                  <button
-                    class="div-botao"
-                    style={{
-                      fontFamily: 'Poppins, sans-serif',
-                      border: 'none',
-                      background: '#121212',
-                      cursor: 'pointer',
-                      textTransform: 'uppercase',
-                      fontWeight: 'bold',
-                      fontSize: '14px',
-                      textAlign: 'left',
-                      paddingLeft: '25px',
-                    }}
-                  >
-                    <span style={{ margin: '0' }}>{item.nome}</span>
-                  </button>
+                  <div className='listar-disciplinas-card'>
+                    <div className='listar-disciplinas-card-titulo'>
+                      <span>{item.nome}</span>
+                    </div>
+                    <div className='listar-disciplinas-card-periodo'>
+                      <span>&#62; Período {item.periodo < 10 ? `0${item.periodo}` : item.periodo}</span>
+                    </div>
+                  </div>
                 </Link>
               ))
-            : ''}
+              : ''}
+          </div>
         </div>
       </div>
-      <div className="listarDisciplina-botao">
-        <Link to="/disciplina/cadastrar">
-          <button className="botaoCadastrar">Cadastrar nova disciplina</button>
-        </Link>
-      </div>
-      <div className="footer">
+      <div>
         <Footer />
       </div>
     </div>

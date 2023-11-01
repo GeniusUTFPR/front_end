@@ -1,4 +1,8 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
+import Cookies from 'js-cookie';
+import { getUserIdFromToken } from '../../services/auth';
+import api from '../../services';
+
 import { Link } from 'react-router-dom';
 import {
   AppBar,
@@ -18,14 +22,8 @@ import { styled } from '@mui/material/styles';
 import WestIcon from '@mui/icons-material/West';
 import { useNavigate } from 'react-router-dom';
 
-// import Logo from '../Logo/logo';
-// import { useToken } from '../../contexts/authContext';
-// import { PERFIL } from '../../routes/routes';
 import './style.css';
 import LogoHeader from '../../assets/logo.svg';
-// import { Perfil } from '../../pages/Usuario/Perfil';
-
-import Cookies from 'js-cookie';
 
 const StyledAppBar = styled(AppBar)({
   zIndex: theme => theme.zIndex.drawer + 1,
@@ -86,21 +84,45 @@ const pagesEstudante = [
   { label: 'Página inicial', url: '/' },
   { label: 'Cursos', url: '/curso/listar' },
 ];
-// const pagesProfessor = [
-//   { label: 'Página inicial', url: '/editar-disciplina' },
-//   { label: 'PAlunos', url: '/listar-palunos' },
-// ];
+const pagesMonitor = [
+  { label: 'Página inicial', url: '/' },
+  { label: 'Cursos', url: '/curso/listar' },
+  { label: 'Monitorias', url: '/monitoria/listar' },
+];
+const pagesProfessor = [
+  { label: 'Página inicial', url: '/' },
+  { label: 'Cursos', url: '/curso/listar' },
+  { label: 'PAlunos', url: '/monitoria/listar' },
+];
 const settings = ['Perfil', 'Sair'];
 
 export const Header = () => {
   const navigate = useNavigate();
+  const accessToken = Cookies.get('accessToken');
+  const id = getUserIdFromToken(accessToken);
+  const [informacoesPerfil, setInformacoesPerfil] = useState({});
 
   function handleLogout() {
     Cookies.remove('refreshToken', { sameSite: 'strict' });
     Cookies.remove('accessToken', { sameSite: 'strict' });
     window.location.href = '/login';
+  }
+
+  async function getUsuario(id) {
+    const { data } = await api.get(`usuarios/${id}`);
+    setInformacoesPerfil(data);
+  }
+
+  useEffect(() => {
+    async function fetch() {
+      try {
+        getUsuario(id);
+      } catch (error) {
+        console.log(error);
+      }
     }
-  //const { usuario, handleLogout } = useToken();
+    fetch();
+  }, [id]);
 
   async function redirecionarLogin() {
     handleLogout();
@@ -180,7 +202,7 @@ export const Header = () => {
                     display: { xs: 'block', md: 'none' },
                   }}
                 >
-                  {/* {usuario.tipo === 4 ? (
+                  {informacoesPerfil?.tipo_usuario?.id === 4 ? (
                     <div>
                       {pagesProfessor.map(page => (
                         <Link to={page.url}>
@@ -195,19 +217,19 @@ export const Header = () => {
                         </Link>
                       ))}
                     </div>
-                  ) : ( */}
-                  <div>
-                    {pagesEstudante.map(page => (
-                      <Link to={page.url}>
-                        <MenuItem key={page.label} onClick={handleCloseNavMenu}>
-                          <Typography textAlign="center" color="#0C0C0C">
-                            {page.label}
-                          </Typography>
-                        </MenuItem>
-                      </Link>
-                    ))}
-                  </div>
-                  {/* )} */}
+                  ) : (
+                    <div>
+                      {pagesEstudante.map(page => (
+                        <Link to={page.url}>
+                          <MenuItem key={page.label} onClick={handleCloseNavMenu}>
+                            <Typography textAlign="center" color="#0C0C0C">
+                              {page.label}
+                            </Typography>
+                          </MenuItem>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </Menu>
               </Box>
               <Link to="/">
@@ -221,7 +243,35 @@ export const Header = () => {
                   marginRight: '',
                 }}
               >
-                {/* {usuario.tipo === 4 ? (
+                {informacoesPerfil?.tipo_usuario?.id === 1 && (
+                  <div>
+                    {pagesEstudante.map(page => (
+                      <Link to={page.url}>
+                        <BootstrapButton
+                          key={page.label}
+                          onClick={handleCloseNavMenu}
+                        >
+                          {page.label}
+                        </BootstrapButton>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+                {informacoesPerfil?.tipo_usuario?.id === 2 | informacoesPerfil?.tipo_usuario?.id === 3 && (
+                  <div>
+                    {pagesMonitor.map(page => (
+                      <Link to={page.url}>
+                        <BootstrapButton
+                          key={page.label}
+                          onClick={handleCloseNavMenu}
+                        >
+                          {page.label}
+                        </BootstrapButton>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+                {informacoesPerfil?.tipo_usuario?.id === 4 && (
                   <div>
                     {pagesProfessor.map(page => (
                       <Link to={page.url}>
@@ -234,20 +284,7 @@ export const Header = () => {
                       </Link>
                     ))}
                   </div>
-                ) : ( */}
-                <div>
-                  {pagesEstudante.map(page => (
-                    <Link to={page.url}>
-                      <BootstrapButton
-                        key={page.label}
-                        onClick={handleCloseNavMenu}
-                      >
-                        {page.label}
-                      </BootstrapButton>
-                    </Link>
-                  ))}
-                </div>
-                {/* )} */}
+                )}
               </Box>
               <Box sx={{ flexGrow: 0 }}>
                 <Tooltip title="Open settings">

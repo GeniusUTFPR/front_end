@@ -1,11 +1,11 @@
-import './style.css';
+import "./style.css";
 
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-import { api } from '../../../services';
-import Header from '../../../components/Header';
-import Footer from '../../../components/Footer';
+import { api } from "../../../services";
+import Header from "../../../components/Header";
+//import Footer from "../../../components/Footer";
 
 export const ListarCursos = () => {
   const [cursos, setCursos] = useState({});
@@ -31,7 +31,7 @@ export const ListarCursos = () => {
       <div className='curso-container'>
         <div className='curso-lista'>
           {cursos.length > 0
-            ? cursos.map(item => (
+            ? cursos.map((item) => (
                 // <option value={item.id}>{item.nome}</option>
                 <Link to={`/disciplina/listar/${item.id}`}>
                   <div className='curso-card'>
@@ -47,7 +47,7 @@ export const ListarCursos = () => {
                   </div>
                 </Link>
               ))
-            : ''}
+            : ""}
         </div>
       </div>
       <div>

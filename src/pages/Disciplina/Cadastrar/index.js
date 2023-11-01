@@ -8,7 +8,7 @@ import { api } from '../../../services';
 import './style.css';
 
 import Header from '../../../components/Header';
-import Footer from '../../../components/Footer';
+//import Footer from '../../../components/Footer';
 
 export const CadastrarDisciplina = () => {
   const navigate = useNavigate();
@@ -41,7 +41,7 @@ export const CadastrarDisciplina = () => {
   const formik = useFormik({
     initialValues: {
       nomeCurso: 0,
-      periodo: 1,
+      periodo: '',
       nome: '',
     },
     onSubmit: async values => {
@@ -68,60 +68,62 @@ export const CadastrarDisciplina = () => {
   });
 
   return (
-    <div className="cadastro-container">
-      <div className="header">
-        <Header />
-      </div>
-      <div className="cadastro-disciplina">
-        <div className="cadastro-wrapper">
-          <h1>
-            Cadastrar nova <span className="conta">Disciplina</span>
-          </h1>
+    <div className="disciplina-container">
+      <Header />
+      <div className="disciplina-cadastro">
+        <h1>
+          Cadastrar nova <span className="conta">Disciplina</span>
+        </h1>
+        <div className='formulario'>
           <form component="form" onSubmit={formik.handleSubmit}>
-            <input
-              type="text"
-              placeholder="Nome da disciplina"
-              name="nome"
-              autoComplete="nome"
-              onChange={formik.handleChange}
-              value={formik.values.nome}
-              autoFocus
-              required
-            />
-            <input
-              type="Periodo"
-              placeholder="Periodo da disciplina"
-              name="periodo"
-              autoComplete="periodo"
-              onChange={formik.handleChange}
-              value={formik.values.periodo}
-              required
-            />
-            <select
-              id="select-curso"
-              type="text"
-              placeholder="Escolha o curso"
-              name="curso"
-              autoComplete="curso"
-              onChange={formik.handleChange}
-              value={formik.values.curso}
-            >
-              <option value={0} defaultValue>
-                Selecione o curso
-              </option>
-              {cursos.length > 0
-                ? cursos.map(item => (
-                    <option value={item.id}>{item.nome}</option>
+            <div className="imputs">
+              <input
+                type="text"
+                placeholder="Nome da disciplina"
+                name="nome"
+                autoComplete="nome"
+                onChange={formik.handleChange}
+                value={formik.values.nome}
+                autoFocus
+                required
+              />
+              <input
+                type="Periodo"
+                placeholder="Periodo da disciplina"
+                name="periodo"
+                autoComplete="periodo"
+                onChange={formik.handleChange}
+                value={formik.values.periodo}
+                required
+              />
+              <select
+                type="text"
+                placeholder="Escolha o curso"
+                name="curso"
+                autoComplete="curso"
+                onChange={formik.handleChange}
+                value={formik.values.curso}
+              >
+                <option value={0} defaultValue className='selecione-curso'>
+                  Selecione o curso
+                </option>
+                {cursos.length > 0
+                  ? cursos.map(item => (
+                    <option key={item.id} value={item.id}>
+                      {item.nome}
+                    </option>
                   ))
-                : ''}
-            </select>
-            <input type="submit" className="botaoCadastrar" value="Cadastrar" />
+                  : ''}
+              </select>
+              <button className="botaoCadastrar">Cadastrar</button>
+            </div>
           </form>
         </div>
+
       </div>
       <div>
-        <Footer />
       </div>
+
     </div>
   );
 };

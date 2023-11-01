@@ -1,0 +1,69 @@
+.monitoria-paluno{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    gap: 1vw;
+}
+
+.monitoria-paluno .title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    border: 1px solid #FECC00;
+    padding: 0.5vw 5vw;
+    border-radius: 10px;
+}
+
+.monitoria-paluno .monitoria{
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+}
+
+.monitoria-paluno .monitoria-externa{
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    padding: 1vw 2vw;
+    border-radius: 1.4375rem;
+    background: #121212;
+}
+
+.monitoria-paluno .monitoria-externa .text{
+    text-align: center;
+    font-weight: 500;
+}
+
+.monitoria-paluno .monitoria-externa p{
+    color: #fff;
+}
+
+.monitoria-paluno .monitoria-externa p span{
+    color: #FECC00;
+}
+
+.monitoria-paluno .monitoria-externa .botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.monitoria-paluno .monitoria-externa .botao button{
+    color: #121212;
+    background-color: #FECC00;
+    padding: 0.5vw 1vw;
+    border-radius: 10px;
+    transition: transform 0.2s;
+    font-weight: 500;
+}
+
+.monitoria-paluno .monitoria-externa .botao button:hover{
+    transform: scale(1.1);
+}
+
+.monitoria-paluno .monitoria-externa .botao button:active{
+    transform: scale(1);
+}

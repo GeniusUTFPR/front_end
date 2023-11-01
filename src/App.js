@@ -10,10 +10,12 @@ import {
   CADASTRAR_MONITORIA,
   EDITAR_MONITORIA,
   LISTAR_MONITORIAS,
+  LISTAR_TODAS_MONITORIAS,
   PERFIL_MONITORIA,
   CADASTRAR_MONITOR,
   LOGIN,
   PERFIL,
+  MONITORIA_PALUNO,
   EDITAR_PERFIL,
   SER_MONITOR,
 } from "./routes";
@@ -26,6 +28,7 @@ import {
   Avaliacao,
   CadastrarDisciplina,
   ListarDisciplinas,
+  ListarTodasMonitorias,
   CadastrarMonitoria,
   EditarMonitoria,
   ListarMonitorias,
@@ -35,10 +38,10 @@ import {
   EditarPerfil,
   Monitor,
   SerMonitor,
+  MonitoriaPaluno,
 } from "./pages";
 
 import isAuthenticated from "./services/auth";
-
 
 export const App = () => {
   return (
@@ -52,18 +55,19 @@ export const App = () => {
           <Route path={CADASTRAR_CURSO} element={<CadastrarCurso />} />
           <Route path={LISTAR_CURSOS} element={<ListarCursos />} />
           <Route path={CADASTRAR_AVALIACAO} element={<Avaliacao />} />
+          <Route path={MONITORIA_PALUNO} element={<MonitoriaPaluno />} />
+
           <Route
             path={CADASTRAR_DISCIPLINA}
             element={<CadastrarDisciplina />}
           />
+          <Route path={LISTAR_DISCIPLINAS} element={<ListarDisciplinas />} />
           <Route
-            path={LISTAR_DISCIPLINAS}
-            element={<ListarDisciplinas />}
+            exact
+            path={LISTAR_TODAS_MONITORIAS}
+            element={<ListarTodasMonitorias />}
           />
-          <Route
-            path={CADASTRAR_MONITORIA}
-            element={<CadastrarMonitoria />}
-          />
+          <Route path={CADASTRAR_MONITORIA} element={<CadastrarMonitoria />} />
           <Route path={CADASTRAR_MONITOR} element={<Monitor />} />
           <Route path={EDITAR_MONITORIA} element={<EditarMonitoria />} />
           <Route path={LISTAR_MONITORIAS} element={<ListarMonitorias />} />
